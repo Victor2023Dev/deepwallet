@@ -18,9 +18,9 @@ import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 const AnimatedView = Animated.createAnimatedComponent(View);
 
-const gradient1DefaultColor = ColorPalette['blue-400'];
-const gradient1HoverColor = '#2C4BE2';
-const gradient2DefaultColor = ColorPalette['blue-400'];
+const gradient1DefaultColor = ColorPalette['shentu-400'];
+const gradient1HoverColor = '#FBBC49';
+const gradient2DefaultColor = ColorPalette['shentu-400'];
 const gradient2HoverColor = '#7A59FF';
 const hoverScale = 1.03;
 const defaultBoxShadowColor = '#2723F700';
@@ -94,7 +94,7 @@ export const SpecialButton: FunctionComponent<SpecialButtonProps> = ({
       style={StyleSheet.flatten([
         style.flatten([
           `height-button-${size}` as any,
-          'background-color-blue-400',
+          'background-color-shentu-400',
           'border-radius-8',
         ]),
         {

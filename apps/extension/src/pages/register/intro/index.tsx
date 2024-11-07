@@ -9,13 +9,13 @@ import {
 import { useRegisterHeader } from "../components/header";
 import { YAxis } from "../../../components/axis";
 import { Gutter } from "../../../components/gutter";
-import { TextButton } from "../../../components/button-text";
+// import { TextButton } from "../../../components/button-text";
 import { observer } from "mobx-react-lite";
-import { useStore } from "../../../stores";
+// import { useStore } from "../../../stores";
 import { useIntl } from "react-intl";
 
 export const RegisterIntroScene: FunctionComponent = observer(() => {
-  const { uiConfigStore } = useStore();
+  // const { uiConfigStore } = useStore();
   const sceneTransition = useSceneTransition();
   const intl = useIntl();
 
@@ -31,11 +31,14 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
   return (
     <RegisterSceneBox>
       <YAxis alignX="center">
-        <video width="200" height="200" autoPlay={true} loop={true}>
-          <source
-            src={require("../../../public/assets/lottie/register/intro.webm")}
-          />
-        </video>
+        <img
+          src={require("../../../public/assets/img/intro.svg")}
+          alt="DeepWallet logo"
+          style={{
+            width: "200px",
+            aspectRatio: "1 / 1",
+          }}
+        />
       </YAxis>
       <Gutter size="3.125rem" />
       <Stack gutter="1.25rem">
@@ -57,8 +60,9 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
           onClick={() => {
             sceneTransition.push("existing-user");
           }}
+          buttonStyle={{ background: 'white', border: '1px #807567 solid' }}
         />
-        {uiConfigStore.platform !== "firefox" ? (
+        {/* {uiConfigStore.platform !== "firefox" ? (
           <TextButton
             text={intl.formatMessage({
               id: "pages.register.intro.connect-hardware-wallet-button",
@@ -68,7 +72,7 @@ export const RegisterIntroScene: FunctionComponent = observer(() => {
               sceneTransition.push("connect-hardware-wallet");
             }}
           />
-        ) : null}
+        ) : null} */}
       </Stack>
     </RegisterSceneBox>
   );

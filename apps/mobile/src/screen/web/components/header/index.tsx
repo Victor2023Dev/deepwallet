@@ -213,7 +213,7 @@ export const OnScreenWebpageScreenHeader: FunctionComponent = observer(() => {
               color={
                 style.flatten([
                   webpageStore.isFavoriteUrlSaved(webViewState.url)
-                    ? 'color-blue-400'
+                    ? 'color-shentu-400'
                     : 'color-gray-300',
                 ]).color
               }

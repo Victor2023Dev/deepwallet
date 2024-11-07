@@ -5,7 +5,6 @@ import { Column, Columns } from "../column";
 import { InformationIcon } from "../icon";
 import { Box } from "../box";
 import { Body3, Subtitle4 } from "../typography";
-import { useTheme } from "styled-components";
 
 export const GuideBox: FunctionComponent<GuideBoxProps> = ({
   title,
@@ -16,8 +15,6 @@ export const GuideBox: FunctionComponent<GuideBoxProps> = ({
   hideInformationIcon,
   backgroundColor,
 }) => {
-  const theme = useTheme();
-
   return (
     <Styles.Container
       gutter="0.5rem"
@@ -29,12 +26,12 @@ export const GuideBox: FunctionComponent<GuideBoxProps> = ({
           <InformationIcon width="1.25rem" height="1.25rem" />
         ) : null}
         <Column weight={1}>
-          <Subtitle4 color={getTitleColor(theme, color)}>{title}</Subtitle4>
+          <Subtitle4 color={getTitleColor(color)}>{title}</Subtitle4>
         </Column>
         {titleRight}
       </Columns>
       {paragraph ? (
-        <Body3 color={getParagraphColor(theme, color)}>{paragraph}</Body3>
+        <Body3 color={getParagraphColor(color)}>{paragraph}</Body3>
       ) : null}
       {bottom ? <Box>{bottom}</Box> : null}
     </Styles.Container>

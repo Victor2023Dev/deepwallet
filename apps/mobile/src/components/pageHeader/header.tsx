@@ -79,7 +79,7 @@ export const HomeScreenHeaderTitle = observer(() => {
               'text-center',
             ]),
           ])}>
-          {keyRingStore.selectedKeyInfo?.name || 'Keplr Account'}
+          {keyRingStore.selectedKeyInfo?.name || 'DeepWallet Account'}
         </Text>
         <ArrowDownFillIcon
           size={20}

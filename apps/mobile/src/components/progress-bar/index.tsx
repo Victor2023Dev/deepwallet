@@ -19,7 +19,7 @@ export const ProgressBar: FunctionComponent<{
         style={StyleSheet.flatten([
           style.flatten([
             'height-8',
-            'background-color-blue-400',
+            'background-color-shentu-400',
             'border-radius-32',
           ]),
           {

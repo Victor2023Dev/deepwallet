@@ -230,7 +230,6 @@ export const WalletSelectPage: FunctionComponent = observer(() => {
           <Button
             text={intl.formatMessage({ id: "page.wallet.add-wallet-button" })}
             size="extraSmall"
-            color="secondary"
             onClick={async () => {
               await browser.tabs.create({
                 url: "/register.html",
@@ -1010,7 +1009,7 @@ const KeyringItem = observer<
             border: isSelected
               ? `1px solid ${
                   theme.mode === "light"
-                    ? ColorPalette["blue-400"]
+                    ? ColorPalette["shentu-400"]
                     : ColorPalette["white"]
                 }`
               : undefined,

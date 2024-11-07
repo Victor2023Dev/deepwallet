@@ -1166,7 +1166,7 @@ export const AppNavigation: FunctionComponent = observer(() => {
             name="Register.FinalizeImportFromExtension"
             component={FinalizeImportFromExtensionScreen}
             options={{
-              title: 'Import from Keplr Extension',
+              title: 'Import from DeepWallet Extension',
               ...registerHeaderOptions,
             }}
           />

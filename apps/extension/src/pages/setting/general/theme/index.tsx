@@ -21,7 +21,7 @@ export const SettingGeneralThemePage: FunctionComponent = () => {
     >
       <Box paddingX="0.75rem" paddingBottom="0.75rem">
         <Stack gutter="0.5rem">
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.theme.dark-mode",
             })}
@@ -34,7 +34,7 @@ export const SettingGeneralThemePage: FunctionComponent = () => {
               theme.setTheme("dark");
               navigate(-1);
             }}
-          />
+          /> */}
           <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.theme.light-mode",

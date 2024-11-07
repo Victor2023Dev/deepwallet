@@ -17,7 +17,7 @@ export const CosmosMethods = [
 // On docs, it describes only about ethereum.
 // However, "accountsChanged" event is not standardised for cosmos.
 // Even though, "accountsChanged" event not standardised enough,
-// Keplr implements it by own way.
+// DeepWallet implements it by own way.
 // In multi chain ecosystem, it is slightly hard to sync changed account when dapp uses multiple chains.
 // To reduce this problem, emit events with changed accounts information with CAIP-10 to permit dapp to sync account with events immediately.
 // However, keplr doesn't invoke "chainChanged" event. The reason is multi-chain philosophy of keplr.

@@ -19,16 +19,16 @@ function handleImageHighRes(image: any, highResImage: any): any {
 }
 
 export const ColorPalette = {
-  'blue-10': '#F6F8FF',
-  'blue-50': '#F0F3FF',
-  'blue-100': '#E4E9FF',
-  'blue-200': '#9DACF4',
-  'blue-300': '#566FEC',
-  'blue-400': '#2C4BE2',
+  'shentu-10': '#F6F8FF',
+  'shentu-50': '#F0F3FF',
+  'shentu-100': '#E4E9FF',
+  'shentu-200': '#9DACF4',
+  'shentu-300': '#566FEC',
+  'shentu-400': '#2C4BE2',
   'blue-500': '#1633C0',
-  'blue-600': '#112377',
-  'blue-700': '#09144D',
-  'blue-800': '#0D1749',
+  'shentu-600': '#112377',
+  'shentu-700': '#09144D',
+  'shentu-800': '#0D1749',
 
   'platinum-10': '#EFF3F8',
   'platinum-50': '#E9EEF5',
@@ -293,7 +293,7 @@ export const {StyleProvider, useStyle, useStyleThemeController} =
             },
             {
               offset: '100%',
-              color: ColorPalette['blue-10'],
+              color: ColorPalette['shentu-10'],
             },
           ],
         },

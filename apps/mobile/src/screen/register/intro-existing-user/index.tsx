@@ -55,7 +55,7 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
 
         <Button
           text={intl.formatMessage({
-            id: 'pages.register.intro-existing-user.import-from-keplr-extension-button',
+            id: 'pages.register.intro-existing-user.import-from-deepwallet-extension-button',
           })}
           size="large"
           onPress={() => {

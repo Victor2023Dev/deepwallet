@@ -3,7 +3,7 @@ import { OfflineAminoSigner, OfflineDirectSigner } from "./cosmjs";
 import { SecretUtils } from "./secretjs";
 
 export interface Window {
-  keplr?: Keplr;
+  deepwallet?: Keplr;
   getOfflineSigner?: (
     chainId: string,
     signOptions?: KeplrSignOptions

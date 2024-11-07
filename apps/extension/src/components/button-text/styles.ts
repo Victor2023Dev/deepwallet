@@ -26,21 +26,6 @@ const buttonStyleFromColorAndMode: Record<
         ${makeTextAndSvgColor(ColorPalette["gray-300"])}
       `,
     },
-    dark: {
-      enabled: css`
-        color: ${ColorPalette["gray-50"]};
-        ${makeTextAndSvgColor(ColorPalette["gray-50"])}
-
-        :hover {
-          color: ${ColorPalette["gray-200"]};
-          ${makeTextAndSvgColor(ColorPalette["gray-200"])}
-        }
-      `,
-      disabled: css`
-        color: ${ColorPalette["gray-200"]};
-        ${makeTextAndSvgColor(ColorPalette["gray-200"])}
-      `,
-    },
   },
   faint: {
     light: {
@@ -56,21 +41,6 @@ const buttonStyleFromColorAndMode: Record<
       disabled: css`
         color: ${ColorPalette["gray-200"]};
         ${makeTextAndSvgColor(ColorPalette["gray-200"])}
-      `,
-    },
-    dark: {
-      enabled: css`
-        color: ${ColorPalette["gray-200"]};
-        ${makeTextAndSvgColor(ColorPalette["gray-200"])}
-
-        :hover {
-          color: ${ColorPalette["gray-300"]};
-          ${makeTextAndSvgColor(ColorPalette["gray-300"])}
-        }
-      `,
-      disabled: css`
-        color: ${ColorPalette["gray-300"]};
-        ${makeTextAndSvgColor(ColorPalette["gray-300"])}
       `,
     },
   },
@@ -111,9 +81,9 @@ export const Styles = {
     border: 0;
     padding: 0 1rem;
 
-    ${({ color, disabled, theme }) =>
-      buttonStyleFromColorAndMode[color || "default"][theme.mode || "dark"][
-        disabled ? "disabled" : "enabled"
+    ${({ disabled }) =>
+      buttonStyleFromColorAndMode["default"]["light"][
+      disabled ? "disabled" : "enabled"
       ]}
     background-color: transparent;
 

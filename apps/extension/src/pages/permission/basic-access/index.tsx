@@ -12,7 +12,6 @@ import { Gutter } from "../../../components/gutter";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 import { handleExternalInteractionWithNoProceedNext } from "../../../utils";
-import SimpleBar from "simplebar-react";
 
 export const PermissionBasicAccessPage: FunctionComponent<{
   data: {
@@ -62,7 +61,7 @@ export const PermissionBasicAccessPage: FunctionComponent<{
       <Box height="100%" padding="0.75rem" paddingBottom="0">
         <Box alignX="center">
           <Image
-            alt="Keplr Logo Image"
+            alt="DeepWallet Logo Image"
             src={require("../../../public/assets/logo-256.png")}
             style={{ width: "4.625rem", height: "4.625rem" }}
           />
@@ -93,16 +92,12 @@ export const PermissionBasicAccessPage: FunctionComponent<{
 
           <Gutter size="1rem" />
         </Box>
-        <SimpleBar
-          autoHide={false}
+        <Box
           style={{
-            display: "flex",
-            flexDirection: "column",
-
             flex: 1,
             overflow: "auto",
-            borderRadius: "0.5rem",
           }}
+          borderRadius="0.5rem"
         >
           <Box>
             {data.chainIds.map((chainId, index) => {
@@ -156,7 +151,7 @@ export const PermissionBasicAccessPage: FunctionComponent<{
               );
             })}
           </Box>
-        </SimpleBar>
+        </Box>
       </Box>
     </HeaderLayout>
   );

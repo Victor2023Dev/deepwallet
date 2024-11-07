@@ -1,13 +1,12 @@
 import React, { FunctionComponent, useLayoutEffect } from "react";
 import { Stack } from "../../../../components/stack";
 import { Box } from "../../../../components/box";
-import Color from "color";
 import { ColorPalette } from "../../../../styles";
 import { Column, Columns } from "../../../../components/column";
 import { Subtitle2 } from "../../../../components/typography";
 import { XAxis, YAxis } from "../../../../components/axis";
 import { Gutter } from "../../../../components/gutter";
-import { CheckIcon, LinkItem, PinView, TwitterIcon } from "./components";
+import { CheckIcon, LinkItem, PinView } from "./components";
 import { Styles } from "./styled";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
@@ -55,7 +54,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
       <Stack alignX="left">
         {isDesktop ? null : (
           <React.Fragment>
-            <CongratsVideo size="150" />
+            <CongratsImg size="150" />
             <Gutter size="1.25rem" />
           </React.Fragment>
         )}
@@ -63,11 +62,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
         <Box
           padding="0.5rem 1rem"
           borderRadius="1.5rem"
-          backgroundColor={
-            theme.mode === "light"
-              ? ColorPalette["green-50"]
-              : Color(ColorPalette["green-600"]).alpha(0.25).toString()
-          }
+          backgroundColor="#D5EAD8"
         >
           <Columns sum={1} gutter="0.625rem">
             <CheckIcon
@@ -78,11 +73,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
               }
             />
             <Subtitle2
-              color={
-                theme.mode === "light"
-                  ? ColorPalette["green-500"]
-                  : ColorPalette["green-400"]
-              }
+              color="#1A932E"
             >
               <FormattedMessage id="pages.register.pages.welcome.sub-title" />
             </Subtitle2>
@@ -103,9 +94,9 @@ export const WelcomePage: FunctionComponent = observer(() => {
 
               <Gutter size="2.25rem" />
 
-              <Box style={{ fontWeight: 500, fontSize: "1.25rem" }}>
+              {/* <Box style={{ fontWeight: 500, fontSize: "1.25rem" }}>
                 <FormattedMessage id="pages.register.pages.welcome.paragraph" />
-              </Box>
+              </Box> */}
 
               <Gutter size="1.5rem" />
 
@@ -150,7 +141,7 @@ export const WelcomePage: FunctionComponent = observer(() => {
                     </Column>
                   </Columns>
 
-                  <Columns sum={1} gutter="0.5rem">
+                  {/* <Columns sum={1} gutter="0.5rem">
                     <Column weight={1}>
                       <LinkItem
                         title={intl.formatMessage({
@@ -175,13 +166,13 @@ export const WelcomePage: FunctionComponent = observer(() => {
                         url="https://icns.xyz/"
                       />
                     </Column>
-                  </Columns>
+                  </Columns> */}
                 </Stack>
               </Box>
             </YAxis>
           </Box>
 
-          {isDesktop ? <CongratsVideo size="450" /> : null}
+          {isDesktop ? <CongratsImg size="450" /> : null}
         </Styles.ResponsiveContainer>
 
         <Gutter size="1.5rem" />
@@ -197,79 +188,21 @@ export const WelcomePage: FunctionComponent = observer(() => {
               window.close();
             }}
           />
-
-          <Gutter size="1.5rem" />
-
-          <Box
-            cursor="pointer"
-            onClick={(e) => {
-              e.preventDefault();
-
-              browser.tabs.create({
-                url: "https://twitter.com/intent/follow?twterm%5Efollow%7Ctwgr%5Ekeplrwallet&screen_name=KeplrWallet",
-              });
-            }}
-          >
-            <XAxis alignY="center">
-              <Box
-                padding="0.375rem"
-                backgroundColor={
-                  theme.mode === "light"
-                    ? ColorPalette["gray-300"]
-                    : ColorPalette["gray-500"]
-                }
-                borderRadius="50%"
-              >
-                <TwitterIcon />
-              </Box>
-
-              <Gutter size="1rem" />
-
-              <Box
-                style={{
-                  fontWeight: 600,
-                  fontSize: "0.875rem",
-                  color:
-                    theme.mode === "light"
-                      ? ColorPalette["gray-300"]
-                      : ColorPalette.white,
-                }}
-              >
-                <FormattedMessage id="pages.register.pages.welcome.follow-twitter.title" />
-              </Box>
-
-              <Gutter size="1rem" />
-
-              <Box
-                width="12.5rem"
-                style={{
-                  fontWeight: 500,
-                  fontSize: "0.75rem",
-                  color: ColorPalette["gray-200"],
-                }}
-              >
-                <FormattedMessage id="pages.register.pages.welcome.follow-twitter.paragraph" />
-              </Box>
-            </XAxis>
-          </Box>
         </XAxis>
       </Stack>
     </Styles.Container>
   );
 });
 
-const CongratsVideo: FunctionComponent<{ size: string }> = ({ size }) => {
+const CongratsImg: FunctionComponent<{ size: string }> = ({ size }) => {
   return (
-    <video
-      width={size}
-      height={size}
-      autoPlay={true}
-      loop={true}
-      style={{ borderRadius: "2.5rem", backgroundColor: "#1A1239" }}
-    >
-      <source
-        src={require("../../../../public/assets/lottie/register/congrats.webm")}
-      />
-    </video>
+    <img
+      src={require("../../../../public/assets/img/intro.svg")}
+      alt="DeepWallet logo"
+      style={{
+        width: `${size}px`,
+        aspectRatio: "1 / 1",
+      }}
+    />
   );
 };

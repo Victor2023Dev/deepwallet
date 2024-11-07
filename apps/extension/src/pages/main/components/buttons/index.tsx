@@ -11,9 +11,9 @@ import { useIntl } from "react-intl";
 
 export const Buttons: FunctionComponent<{
   onClickDeposit: () => void;
-  onClickBuy: () => void;
+  onClickBuy?: () => void;
   isNotReady?: boolean;
-}> = observer(({ onClickDeposit, onClickBuy, isNotReady }) => {
+}> = observer(({ onClickDeposit, isNotReady }) => {
   const { hugeQueriesStore } = useStore();
   const navigate = useNavigate();
   const intl = useIntl();
@@ -23,12 +23,16 @@ export const Buttons: FunctionComponent<{
     return balances.find((bal) => bal.token.toDec().gt(new Dec(0))) != null;
   }, [balances]);
 
+  const onClickStaking = () => window.open("https://explorer.shentu.org/validators");
+
   return (
     <Box>
       <Columns sum={1} gutter="0.625rem">
         <Column weight={1}>
           <Skeleton type="button" isNotReady={isNotReady}>
             <Button
+              textColor="#7E5700"
+              buttonStyle={{ color: "#7E5700", background: "#FFEED9" }}
               text={intl.formatMessage({
                 id: "page.main.components.buttons.deposit-button",
               })}
@@ -41,11 +45,13 @@ export const Buttons: FunctionComponent<{
         <Column weight={1}>
           <Skeleton type="button" isNotReady={isNotReady}>
             <Button
+              textColor="#7E5700"
+              buttonStyle={{ color: "#7E5700", background: "#FFEED9" }}
               text={intl.formatMessage({
-                id: "page.main.components.buttons.buy-button",
+                id: "page.main.components.buttons.staking-button",
               })}
               color="secondary"
-              onClick={onClickBuy}
+              onClick={onClickStaking}
             />
           </Skeleton>
         </Column>
@@ -53,6 +59,8 @@ export const Buttons: FunctionComponent<{
         <Column weight={1}>
           <Skeleton type="button" isNotReady={isNotReady}>
             <Button
+              textColor="#201B13"
+              buttonStyle={{ color: "#201B13", background: "#FBBC49" }}
               text={intl.formatMessage({
                 id: "page.main.components.buttons.send-button",
               })}

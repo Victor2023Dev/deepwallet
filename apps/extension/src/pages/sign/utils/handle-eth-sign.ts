@@ -91,7 +91,7 @@ export const handleEthereumPreSignByKeystone = async (
   options: KeystoneOptions
 ): Promise<Uint8Array | undefined> => {
   const keystoneSDK = new KeystoneSDK({
-    origin: "Keplr Extension",
+    origin: "DeepWallet Extension",
   });
   const address = interactionData.data.signer;
   const path = getPathFromPubKey(

@@ -253,7 +253,7 @@ export class ObservableQueryIbcPfmTransfer {
 
       return res
         .filter((r) => {
-          // In evmos the ibc token is automatically wrapped in erc20 and currently Keplr cannot handle erc20. For now, block sending to evmos
+          // In evmos the ibc token is automatically wrapped in erc20 and currently DeepWallet cannot handle erc20. For now, block sending to evmos
           if (
             r.destinationChainId.startsWith("evmos_") &&
             r.originDenom !== "aevmos"

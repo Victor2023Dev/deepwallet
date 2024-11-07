@@ -3,9 +3,9 @@ title: Basic API
 order: 1
 ---
 
-## How to detect Keplr
+## How to detect DeepWallet
 
-You can determine whether Keplr is installed on the user device by checking `window.keplr`. If `window.keplr` returns `undefined` after document.load, Keplr is not installed. There are several ways to wait for the load event to check the status. Refer to the examples below:
+You can determine whether DeepWallet is installed on the user device by checking `window.keplr`. If `window.keplr` returns `undefined` after document.load, DeepWallet is not installed. There are several ways to wait for the load event to check the status. Refer to the examples below:
 
 You can register the function to `window.onload`:
 
@@ -16,7 +16,7 @@ window.onload = async () => {
     } else {
         const chainId = "cosmoshub-4";
 
-        // Enabling before using the Keplr is recommended.
+        // Enabling before using the DeepWallet is recommended.
         // This method will ask the user whether to allow access if they haven't visited this website.
         // Also, it will request that the user unlock the wallet if the wallet is locked.
         await window.keplr.enable(chainId);
@@ -25,11 +25,11 @@ window.onload = async () => {
     
         // You can get the address/public keys by `getAccounts` method.
         // It can return the array of address/public key.
-        // But, currently, Keplr extension manages only one address/public key pair.
+        // But, currently, DeepWallet extension manages only one address/public key pair.
         // XXX: This line is needed to set the sender address for SigningCosmosClient.
         const accounts = await offlineSigner.getAccounts();
     
-        // Initialize the gaia api with the offline signer that is injected by Keplr extension.
+        // Initialize the gaia api with the offline signer that is injected by DeepWallet extension.
         const cosmJS = new SigningCosmosClient(
             "https://lcd-cosmoshub.keplr.app",
             accounts[0].address,
@@ -42,7 +42,7 @@ window.onload = async () => {
 or track the document's ready state through the document event listener:
 
 ```javascript
-async getKeplr(): Promise<Keplr | undefined> {
+async getKeplr(): Promise<DeepWallet | undefined> {
     if (window.keplr) {
         return window.keplr;
     }
@@ -69,11 +69,11 @@ async getKeplr(): Promise<Keplr | undefined> {
 
 There may be multiple ways to achieve the same result, and no preferred method.
 
-## Keplr-specific features
+## DeepWallet-specific features
 
-If you were able to connect Keplr with CosmJS, you may skip to the [Use Keplr with CosmJS](./cosmjs.md) section.
+If you were able to connect DeepWallet with CosmJS, you may skip to the [Use DeepWallet with CosmJS](./cosmjs.md) section.
 
-While Keplr supports an easy way to connect to CosmJS, there are additional functions specific to Keplr which provide additional features.
+While DeepWallet supports an easy way to connect to CosmJS, there are additional functions specific to DeepWallet which provide additional features.
 
 ### Using with Typescript
 **`window.d.ts`**
@@ -86,9 +86,9 @@ declare global {
 }
 ```
 
-The `@keplr-wallet/types` package has the type definition related to Keplr.  
+The `@keplr-wallet/types` package has the type definition related to DeepWallet.  
 If you're using TypeScript, run `npm install --save-dev @keplr-wallet/types` or `yarn add -D @keplr-wallet/types` to install `@keplr-wallet/types`.  
-Then, you can add the `@keplr-wallet/types` window to a global window object and register the Keplr related types.
+Then, you can add the `@keplr-wallet/types` window to a global window object and register the DeepWallet related types.
 
 > Usage of any other packages besides @keplr-wallet/types is not recommended.
 > - Any other packages besides @keplr-wallet/types are actively being developed, backward compatibility is not in the scope of support.
@@ -100,7 +100,7 @@ Then, you can add the `@keplr-wallet/types` window to a global window object and
 enable(chainIds: string | string[]): Promise<void>
 ```
 
-The `window.keplr.enable(chainIds)` method requests the extension to be unlocked if it's currently locked. If the user hasn't given permission to the webpage, it will ask the user to give permission for the webpage to access Keplr.
+The `window.keplr.enable(chainIds)` method requests the extension to be unlocked if it's currently locked. If the user hasn't given permission to the webpage, it will ask the user to give permission for the webpage to access DeepWallet.
 
 `enable` method can receive one or more chain-id as an array. When the array of chain-id is passed, you can request permissions for all chains that have not yet been authorized at once.
 
@@ -119,7 +119,7 @@ getKey(chainId: string): Promise<{
 }>
 ```
 
-If the webpage has permission and Keplr is unlocked, this function will return the address and public key in the following format:
+If the webpage has permission and DeepWallet is unlocked, this function will return the address and public key in the following format:
 
 ```javascript
 {
@@ -142,7 +142,7 @@ It also returns the nickname for the key store currently selected, which should 
 signAmino(chainId: string, signer: string, signDoc: StdSignDoc): Promise<AminoSignResponse>
 ```
 
-Similar to CosmJS `OfflineSigner`'s `signAmino`, but Keplr's `signAmino` takes the chain-id as a required parameter. Signs Amino-encoded `StdSignDoc`.
+Similar to CosmJS `OfflineSigner`'s `signAmino`, but DeepWallet's `signAmino` takes the chain-id as a required parameter. Signs Amino-encoded `StdSignDoc`.
 
 ### Sign Direct / Protobuf
 
@@ -162,7 +162,7 @@ signDirect(chainId:string, signer:string, signDoc: {
   }): Promise<DirectSignResponse>
 ```
 
-Similar to CosmJS `OfflineDirectSigner`'s `signDirect`, but Keplr's `signDirect` takes the chain-id as a required parameter. Signs Proto-encoded `StdSignDoc`.
+Similar to CosmJS `OfflineDirectSigner`'s `signDirect`, but DeepWallet's `signDirect` takes the chain-id as a required parameter. Signs Proto-encoded `StdSignDoc`.
 
 ### Request Transaction Broadcasting
 
@@ -174,9 +174,9 @@ sendTx(
 ): Promise<Uint8Array>;
 ```
 
-This function requests Keplr to delegate the broadcasting of the transaction to Keplr's LCD endpoints (rather than the webpage broadcasting the transaction).
+This function requests DeepWallet to delegate the broadcasting of the transaction to DeepWallet's LCD endpoints (rather than the webpage broadcasting the transaction).
 This method returns the transaction hash if it succeeds to broadcast, if else the method will throw an error.
-When Keplr broadcasts the transaction, Keplr will send the notification on the transaction's progress.
+When DeepWallet broadcasts the transaction, DeepWallet will send the notification on the transaction's progress.
 
 ### Request Signature for Arbitrary Message
 
@@ -198,7 +198,7 @@ This is an experimental implementation of [ADR-36](https://github.com/cosmos/cos
   
 Its main usage is to prove ownership of an account off-chain, requesting ADR-36 signature using the `signArbitrary` API.  
   
-If requested sign doc with the `signAnimo` API with the ADR-36 that Keplr requires instead of using the `signArbitary` API, it would function as `signArbitary`  
+If requested sign doc with the `signAnimo` API with the ADR-36 that DeepWallet requires instead of using the `signArbitary` API, it would function as `signArbitary`  
 - Only supports sign doc in the format of Amino. (in the case of protobuf, [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/master/docs/architecture/adr-036-arbitrary-signature.md) requirements aren't fully specified for implementation)
 - sign doc message should be single and the message type should be "sign/MsgSignData"
 - sign doc "sign/MsgSignData" message should have "signer" and "data" as its value. "data" should be base64 encoded
@@ -226,7 +226,7 @@ signEthereum(
 )
 ```
 
-This is an experimental implementation of native Ethereum signing in Keplr to be used by dApps on EVM-compatible chains such as Evmos. 
+This is an experimental implementation of native Ethereum signing in DeepWallet to be used by dApps on EVM-compatible chains such as Evmos. 
 
 It supports signing either [Personal Messages](https://eips.ethereum.org/EIPS/eip-191) or [Transactions](https://ethereum.org/en/developers/docs/transactions/), with plans to support [Typed Data](https://eips.ethereum.org/EIPS/eip-712) in the future.
 
@@ -246,11 +246,11 @@ export interface KeplrSignOptions {
   readonly preferNoSetMemo?: boolean;
 }
 ```
-Keplr v0.8.11+ offers additional options to customize interactions between the frontend website and Keplr extension.
+DeepWallet v0.8.11+ offers additional options to customize interactions between the frontend website and DeepWallet extension.
 
-If `preferNoSetFee` is set to true, Keplr will prioritize the frontend-suggested fee rather than overriding the tx fee setting of the signing page.
+If `preferNoSetFee` is set to true, DeepWallet will prioritize the frontend-suggested fee rather than overriding the tx fee setting of the signing page.
 
-If `preferNoSetMemo` is set to true, Keplr will not override the memo and set fix memo as the front-end set memo.
+If `preferNoSetMemo` is set to true, DeepWallet will not override the memo and set fix memo as the front-end set memo.
 
 You can set the values as follows:
 ```javascript
@@ -270,12 +270,12 @@ window.keplr.defaultOptions = {
 keplr_keystorechange
 ```
 
-When the user switches their key store/account after the webpage has received the information on the key store/account the key that the webpage is aware of may not match the selected key in Keplr which may cause issues in the interactions.
+When the user switches their key store/account after the webpage has received the information on the key store/account the key that the webpage is aware of may not match the selected key in DeepWallet which may cause issues in the interactions.
 
-To prevent this from happening, when the key store/account is changed, Keplr emits a `keplr_keystorechange` event to the webpage's window. You can request the new key/account based on this event listener.
+To prevent this from happening, when the key store/account is changed, DeepWallet emits a `keplr_keystorechange` event to the webpage's window. You can request the new key/account based on this event listener.
 
 ```javascript
 window.addEventListener("keplr_keystorechange", () => {
-    console.log("Key store in Keplr is changed. You may need to refetch the account info.")
+    console.log("Key store in DeepWallet is changed. You may need to refetch the account info.")
 })
 ```

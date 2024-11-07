@@ -40,7 +40,7 @@ export const GovernanceProposalStatusChip: FunctionComponent<{
                 width={6}
                 height={6}
                 borderRadius={64}
-                backgroundColor={style.get('color-blue-300').color}
+                backgroundColor={style.get('color-shentu-300').color}
               />
             </Columns>
           }

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { ColorPalette } from "../../../../styles";
-import { CloseIcon, LinkIcon } from "../../../../components/icon";
+import { CloseIcon } from "../../../../components/icon";
 import { Box } from "../../../../components/box";
 import { Stack } from "../../../../components/stack";
 import { useNavigate } from "react-router";
@@ -9,7 +9,6 @@ import { Gutter } from "../../../../components/gutter";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../../../stores";
 import {
-  Button2,
   Caption1,
   H3,
   H5,
@@ -361,7 +360,7 @@ export const MenuBar: FunctionComponent<{
             <FormattedMessage id="page.main.components.menu-bar.lock-wallet-title" />
           </Styles.MenuItem>
 
-          <Gutter size="1rem" />
+          {/* <Gutter size="1rem" />
 
           <Box
             width="6.5rem"
@@ -409,12 +408,13 @@ export const MenuBar: FunctionComponent<{
                 }
               />
             </XAxis>
-          </Box>
+          </Box> */}
         </Bleed>
       </Box>
     </Box>
   );
 });
+
 
 const PanelModeItemStylesImageContainer = styled.div<{
   isSelected: boolean;

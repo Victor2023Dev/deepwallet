@@ -393,7 +393,7 @@ export const SignModal = registerCardModal(
         <Gutter size={24} />
 
         <Columns sum={1} alignY="center">
-          <Text style={style.flatten(['h5', 'color-blue-400'])}>
+          <Text style={style.flatten(['h5', 'color-shentu-400'])}>
             {msgs.length}
           </Text>
 

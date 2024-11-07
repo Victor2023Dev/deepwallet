@@ -305,8 +305,8 @@ export const SwapFeeInfo: FunctionComponent<{
                             borderRadius: "99999px",
                             backgroundColor:
                               theme.mode === "light"
-                                ? ColorPalette["blue-400"]
-                                : ColorPalette["blue-400"],
+                                ? ColorPalette["shentu-400"]
+                                : ColorPalette["shentu-400"],
                           }}
                         />
                       </Box>

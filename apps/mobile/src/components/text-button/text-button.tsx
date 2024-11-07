@@ -90,7 +90,7 @@ export const TextButton: FunctionComponent<{
             'justify-center',
             'items-center',
           ])}>
-          <SVGLoadingIcon color={style.get('color-blue-400').color} size={16} />
+          <SVGLoadingIcon color={style.get('color-shentu-400').color} size={16} />
         </View>
       ) : (
         <Text

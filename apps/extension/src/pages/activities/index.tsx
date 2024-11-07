@@ -97,7 +97,7 @@ export const ActivitiesPage: FunctionComponent = observer(() => {
   const [selectedKey, setSelectedKey] = useState<string>("__all__");
 
   const querySupported = queriesStore.simpleQuery.queryGet<string[]>(
-    process.env["KEPLR_EXT_CONFIG_SERVER"],
+    "https://gjsttg7mkgtqhjpt3mv5aeuszi0zblbb.lambda-url.us-west-2.on.aws",
     "/tx-history/supports"
   );
 
@@ -115,7 +115,7 @@ export const ActivitiesPage: FunctionComponent = observer(() => {
   otherBech32Addresses.setSupportedChainList(supportedChainList);
 
   const msgHistory = usePaginatedCursorQuery<ResMsgsHistory>(
-    process.env["KEPLR_EXT_TX_HISTORY_BASE_URL"],
+    "https://satellite.keplr.app",
     () => {
       return `/history/msgs/keplr-multi-chain?baseBech32Address=${
         account.bech32Address

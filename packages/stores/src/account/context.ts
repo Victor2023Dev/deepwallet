@@ -39,7 +39,7 @@ export class AccountSharedContext {
       return requests.map(() => {
         return {
           status: "rejected",
-          reason: new Error("Keplr is not installed"),
+          reason: new Error("DeepWallet is not installed"),
         };
       });
     }
@@ -109,7 +109,7 @@ export class AccountSharedContext {
       return requests.map(() => {
         return {
           status: "rejected",
-          reason: new Error("Keplr is not installed"),
+          reason: new Error("DeepWallet is not installed"),
         };
       });
     }

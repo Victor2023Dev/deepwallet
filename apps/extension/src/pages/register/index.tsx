@@ -25,7 +25,7 @@ import {
 } from "./components/header";
 import { RegisterIntroExistingUserScene } from "./intro-existing-user";
 import { RegisterNamePasswordScene } from "./name-password";
-import { ConnectHardwareWalletScene } from "./connect-hardware";
+// import { ConnectHardwareWalletScene } from "./connect-hardware";
 import { ConnectLedgerScene } from "./connect-ledger";
 import { RegisterNamePasswordHardwareScene } from "./name-password-hardware";
 import { FinalizeKeyScene } from "./finalize-key";
@@ -35,10 +35,6 @@ import { useStore } from "../../stores";
 import { useSearchParams } from "react-router-dom";
 import * as KeplrWalletPrivate from "keplr-wallet-private";
 import { BackUpPrivateKeyScene } from "./back-up-private-key";
-import {
-  ConnectKeystoneQRScene,
-  ConnectKeystoneUSBScene,
-} from "./connect-keystone";
 import { ScanKeystoneScene } from "./connect-keystone/scan";
 
 const Container = styled.div`
@@ -183,6 +179,7 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
         }
         borderRadius="1.5rem"
         style={{
+          transform: "scale(0.9)",
           boxShadow:
             theme.mode === "light"
               ? "0px 1px 4px 0px rgba(43, 39, 55, 0.10)"
@@ -200,12 +197,12 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
             {
               name: "new-user",
               element: RegisterIntroNewUserScene,
-              width: "53.75rem",
+              width: "30rem",
             },
             {
               name: "existing-user",
               element: RegisterIntroExistingUserScene,
-              width: "53.75rem",
+              width: "30rem",
             },
             {
               name: "new-mnemonic",
@@ -223,23 +220,8 @@ const RegisterPageImpl: FunctionComponent = observer(() => {
               width: "33.75rem",
             },
             {
-              name: "connect-hardware-wallet",
-              element: ConnectHardwareWalletScene,
-              width: "31rem",
-            },
-            {
               name: "connect-ledger",
               element: ConnectLedgerScene,
-              width: "40rem",
-            },
-            {
-              name: "connect-keystone-qr",
-              element: ConnectKeystoneQRScene,
-              width: "40rem",
-            },
-            {
-              name: "connect-keystone-usb",
-              element: ConnectKeystoneUSBScene,
               width: "40rem",
             },
             {

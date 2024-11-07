@@ -65,7 +65,7 @@ export const MnemonicInput = React.forwardRef<
               // The order is important.
               // The border color has different priority according to state.
               // The more in front, the lower the priority.
-              isFocused ? 'border-color-blue-400' : undefined,
+              isFocused ? 'border-color-shentu-400' : undefined,
               error ? 'border-color-red-200' : undefined,
               !(props.editable ?? true) && 'background-color-gray-50',
             ],

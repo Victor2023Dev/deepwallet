@@ -212,7 +212,7 @@ export const CameraScreen: FunctionComponent = observer(() => {
               'justify-center',
             ])}>
             <SVGLoadingIcon
-              color={style.get('color-blue-200').color}
+              color={style.get('color-shentu-200').color}
               size={42}
             />
           </View>

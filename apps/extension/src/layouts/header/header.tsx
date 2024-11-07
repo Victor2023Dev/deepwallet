@@ -36,7 +36,7 @@ const Styles = {
 
     background: ${(props) =>
       props.theme.mode === "light"
-        ? ColorPalette["light-gradient"]
+        ? "#F4F3F2"
         : ColorPalette["gray-700"]};
 
     body[data-white-background="true"] && {
@@ -164,7 +164,7 @@ const Styles = {
   BottomButtonMockBackplate: styled.div`
     background: ${(props) =>
       props.theme.mode === "light"
-        ? ColorPalette["light-gradient"]
+        ? "#F4F3F2"
         : ColorPalette["gray-700"]};
 
     body[data-white-background="true"] && {
@@ -191,7 +191,6 @@ export const HeaderLayout: FunctionComponent<
   isNotReady,
   additionalPaddingBottom,
   headerContainerStyle,
-
   fixedTop,
 }) => {
   const [height, setHeight] = React.useState(() => pxToRem(600));

@@ -258,7 +258,7 @@ export const SwapFeeInfo: FunctionComponent<{
                     width={6}
                     height={6}
                     borderRadius={3}
-                    backgroundColor={style.get('color-blue-400').color}
+                    backgroundColor={style.get('color-shentu-400').color}
                   />
                 </React.Fragment>
               ) : null}

@@ -83,7 +83,7 @@ export const Button: FunctionComponent<{
       case 'danger':
         return ['color-red-400'];
       case 'primary':
-        return ['color-white', 'light:color-blue-400'];
+        return ['color-white', 'light:color-shentu-400'];
       //default는 기본적으로 primary 색상으로 적용 primary랑 secondary는 같은 색이라서 해당 색으로 적용
       default:
         return ['color-white'];
@@ -98,7 +98,7 @@ export const Button: FunctionComponent<{
         return 'color-gray-200';
       //default는 기본적으로 primary 색상으로 적용
       default:
-        return 'color-blue-200';
+        return 'color-shentu-200';
     }
   })();
 

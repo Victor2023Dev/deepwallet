@@ -9549,23 +9549,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keystonehq/hw-transport-webusb@npm:0.4.0":
+"@keystonehq/hw-transport-webusb@npm:0.4.0, @keystonehq/hw-transport-webusb@npm:^0.4.0-beta.0":
   version: 0.4.0
   resolution: "@keystonehq/hw-transport-webusb@npm:0.4.0"
   dependencies:
     "@keystonehq/hw-transport-error": ^0.0.2
     buffer: ^6.0.3
   checksum: 7c56d7b9b73596306be50aae6b5661905a88fb018385b6074c0f18a04efbf5871f7fe93b957c6fe8f966f7c829ff085df444c9fbd23967c0ef2df4a7f9f7e4ae
-  languageName: node
-  linkType: hard
-
-"@keystonehq/hw-transport-webusb@npm:^0.4.0-beta.0":
-  version: 0.4.0-beta.0
-  resolution: "@keystonehq/hw-transport-webusb@npm:0.4.0-beta.0"
-  dependencies:
-    "@keystonehq/hw-transport-error": ^0.0.2
-    buffer: ^6.0.3
-  checksum: 70c85917bb234ae6bd420ecb0744647ca8358f67b1eb043814f45567a0eb1b73ac6c8699cbdc877ad77f9d0a70d8ec5859b73aa4bfdfff8b29fad7dee2fce216
   languageName: node
   linkType: hard
 
@@ -10623,12 +10613,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/curves@npm:^1.4.2, @noble/curves@npm:~1.4.0":
-  version: 1.4.2
-  resolution: "@noble/curves@npm:1.4.2"
+"@noble/curves@npm:^1.4.2":
+  version: 1.6.0
+  resolution: "@noble/curves@npm:1.6.0"
   dependencies:
-    "@noble/hashes": 1.4.0
-  checksum: c475a83c4263e2c970eaba728895b9b5d67e0ca880651e9c6e3efdc5f6a4f07ceb5b043bf71c399fc80fada0b8706e69d0772bffdd7b9de2483b988973a34cba
+    "@noble/hashes": 1.5.0
+  checksum: 258f3feb2a6098cf35521562ecb7d452fd728e8a008ff9f1ef435184f9d0c782ceb8f7b7fa8df3317c3be7a19f53995ee124cd05c8080b130bd42e3cb072f24d
   languageName: node
   linkType: hard
 
@@ -10638,6 +10628,15 @@ __metadata:
   dependencies:
     "@noble/hashes": 1.3.3
   checksum: b65342ee66c4a440eee2978524412eabba9a9efdd16d6370e15218c6a7d80bddf35e66bb57ed52c0dfd32cb9a717b439ab3a72db618f1a0066dfebe3fd12a421
+  languageName: node
+  linkType: hard
+
+"@noble/curves@npm:~1.4.0":
+  version: 1.4.2
+  resolution: "@noble/curves@npm:1.4.2"
+  dependencies:
+    "@noble/hashes": 1.4.0
+  checksum: c475a83c4263e2c970eaba728895b9b5d67e0ca880651e9c6e3efdc5f6a4f07ceb5b043bf71c399fc80fada0b8706e69d0772bffdd7b9de2483b988973a34cba
   languageName: node
   linkType: hard
 
@@ -10662,10 +10661,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:1.4.0, @noble/hashes@npm:^1.4.0":
+"@noble/hashes@npm:1.4.0":
   version: 1.4.0
   resolution: "@noble/hashes@npm:1.4.0"
   checksum: 8ba816ae26c90764b8c42493eea383716396096c5f7ba6bea559993194f49d80a73c081f315f4c367e51bd2d5891700bcdfa816b421d24ab45b41cb03e4f3342
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:1.5.0, @noble/hashes@npm:^1.4.0":
+  version: 1.5.0
+  resolution: "@noble/hashes@npm:1.5.0"
+  checksum: 9cc031d5c888c455bfeef76af649b87f75380a4511405baea633c1e4912fd84aff7b61e99716f0231d244c9cfeda1fafd7d718963e6a0c674ed705e9b1b4f76b
   languageName: node
   linkType: hard
 
@@ -12647,9 +12653,9 @@ __metadata:
   linkType: hard
 
 "@scure/base@npm:~1.1.3":
-  version: 1.1.7
-  resolution: "@scure/base@npm:1.1.7"
-  checksum: d9084be9a2f27971df1684af9e40bb750e86f549345e1bb3227fb61673c0c83569c92c1cb0a4ddccb32650b39d3cd3c145603b926ba751c9bc60c27317549b20
+  version: 1.1.9
+  resolution: "@scure/base@npm:1.1.9"
+  checksum: 120820a37dfe9dfe4cab2b7b7460552d08e67dee8057ed5354eb68d8e3440890ae983ce3bee957d2b45684950b454a2b6d71d5ee77c1fd3fddc022e2a510337f
   languageName: node
   linkType: hard
 
@@ -16179,8 +16185,8 @@ __metadata:
   linkType: hard
 
 "abi-wan-kanabi@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "abi-wan-kanabi@npm:2.2.2"
+  version: 2.2.3
+  resolution: "abi-wan-kanabi@npm:2.2.3"
   dependencies:
     ansicolors: ^0.3.2
     cardinal: ^2.1.1
@@ -16188,7 +16194,7 @@ __metadata:
     yargs: ^17.7.2
   bin:
     generate: dist/generate.js
-  checksum: 4cf69171887c243a4b5857653f791f3b2042eba93a7326fe03120355cb9f0e29944b91650f96ad739bffad7d8ec9d88c71eeb0debe57df3cd905a1b7c9c2c4a8
+  checksum: b1b4bb9a8e721dcab643d47db532814e2b71a3148544495326aea52f60d594d14d1e05b8b9d33b2aed39a083acbc928b589f029ac0b0dde070972c3ba54ad292
   languageName: node
   linkType: hard
 
@@ -30233,9 +30239,9 @@ __metadata:
   linkType: hard
 
 "lossless-json@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "lossless-json@npm:4.0.1"
-  checksum: 41e89f5b7800cf5f863776542c82d8a19a696e5537865699d5ee062726d069561f7b857e838195496f2a43afe64a7dce475be5a2565822881f39feb0eda5d218
+  version: 4.0.2
+  resolution: "lossless-json@npm:4.0.2"
+  checksum: 8a5520275ffb3ddc9310cb714c9bc85102e784fb3fc7cb039be0c2ffedd5da5f06094fffda93db2181d204b51c2591c534aedf2d74b828a7a0bae12babe8363a
   languageName: node
   linkType: hard
 
@@ -39196,9 +39202,9 @@ __metadata:
   linkType: hard
 
 "set-cookie-parser@npm:^2.4.8":
-  version: 2.7.0
-  resolution: "set-cookie-parser@npm:2.7.0"
-  checksum: 1eed43d7b284b727b4e7d35e324a74c493469265488b0c8f464f5224186e7dbbdd1cb35c8822053581f807a10b930a628144041ad453db06548945c61d5a834f
+  version: 2.7.1
+  resolution: "set-cookie-parser@npm:2.7.1"
+  checksum: 2ef8b351094712f8f7df6d63ed4b10350b24a5b515772690e7dec227df85fcef5bc451c7765f484fd9f36694ece5438d1456407d017f237d0d3351d7dbbd3587
   languageName: node
   linkType: hard
 

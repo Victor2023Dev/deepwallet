@@ -67,7 +67,7 @@ const OptionToggle: FunctionComponent<{selected: boolean}> = ({selected}) => {
           'width-24',
           'height-24',
           'border-radius-32',
-          'background-color-blue-400',
+          'background-color-shentu-400',
           'items-center',
           'justify-center',
         ])}>

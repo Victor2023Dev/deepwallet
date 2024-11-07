@@ -27,7 +27,7 @@ configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.deepwallet = new Keplr(
   manifest.version,
   "core",
   new InExtensionMessageRequester()

@@ -29,7 +29,7 @@ export const StoreProvider: FunctionComponent<PropsWithChildren> = ({
         // Remember that `KeplrCoreTypes` is only usable on privileged env.
         // Definitely, extension is privileged env. So, we can use `getAnalyticsId()`.
         if (keplr && keplr.__core__getAnalyticsId) {
-          keplr.__core__getAnalyticsId().then((id) => {
+          keplr.__core__getAnalyticsId().then((id: any) => {
             stores.analyticsStore.setUserId(id);
           });
         }

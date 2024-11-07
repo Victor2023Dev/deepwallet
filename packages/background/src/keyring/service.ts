@@ -285,7 +285,7 @@ export class KeyRingService {
               change: 0,
               addressIndex: 0,
             },
-            keyStore.meta?.["name"] ?? "Keplr Account",
+            keyStore.meta?.["name"] ?? "DeepWallet Account",
             password
           );
           if (keyStore.coinTypeForChain) {
@@ -375,7 +375,7 @@ export class KeyRingService {
           const vaultId = await this.createPrivateKeyKeyRing(
             privateKey,
             meta,
-            keyStore.meta?.["name"] ?? "Keplr Account",
+            keyStore.meta?.["name"] ?? "DeepWallet Account",
             password
           );
 
@@ -435,7 +435,7 @@ export class KeyRingService {
                   change: 0,
                   addressIndex: 0,
                 },
-                keyStore.meta?.["name"] ?? "Keplr Account",
+                keyStore.meta?.["name"] ?? "DeepWallet Account",
                 password
               );
 
@@ -486,7 +486,7 @@ export class KeyRingService {
                 change: 0,
                 addressIndex: 0,
               },
-              keyStore.meta?.["name"] ?? "Keplr Account",
+              keyStore.meta?.["name"] ?? "DeepWallet Account",
               password
             );
 
@@ -909,7 +909,7 @@ export class KeyRingService {
       throw new Error("Vault is null");
     }
 
-    return (vault.insensitive["keyRingName"] as string) || "Keplr Account";
+    return (vault.insensitive["keyRingName"] as string) || "DeepWallet Account";
   }
 
   @action
@@ -1353,7 +1353,7 @@ export class KeyRingService {
               meta["socialType"] = web3Auth["type"];
               meta["email"] = web3Auth["email"] as string;
             } else {
-              // Keplr mobile only supports google web3Auth.
+              // DeepWallet mobile only supports google web3Auth.
               continue;
             }
           }

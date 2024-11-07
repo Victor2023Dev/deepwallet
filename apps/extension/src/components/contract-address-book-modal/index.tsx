@@ -51,7 +51,7 @@ export const ContractAddressBookModal: FunctionComponent<{
   const contracts =
     "cosmos" in chainStore.getModularChain(chainId)
       ? queriesStore.get(chainId).tokenContracts.queryTokenContracts
-          .tokenContracts
+        .tokenContracts
       : starknetQueriesStore.get(chainId).queryTokenContracts.tokenContracts;
 
   const [search, setSearch] = useState("");
@@ -60,10 +60,10 @@ export const ContractAddressBookModal: FunctionComponent<{
 
   const filtered = search
     ? contracts.filter(
-        (contract) =>
-          contract.metadata.name.toLowerCase().includes(search.toLowerCase()) ||
-          contract.metadata.symbol.toLowerCase().includes(search.toLowerCase())
-      )
+      (contract: any) =>
+        contract.metadata.name.toLowerCase().includes(search.toLowerCase()) ||
+        contract.metadata.symbol.toLowerCase().includes(search.toLowerCase())
+    )
     : contracts;
 
   return (
@@ -109,7 +109,7 @@ export const ContractAddressBookModal: FunctionComponent<{
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {filtered.map((contract, index) => (
+              {filtered.map((contract: any, index: any) => (
                 <ContractAddressItem
                   key={index}
                   name={contract.metadata.name}

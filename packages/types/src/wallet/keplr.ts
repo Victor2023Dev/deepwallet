@@ -62,9 +62,9 @@ export interface KeplrSignOptions {
 export interface Keplr {
   readonly version: string;
   /**
-   * mode means that how Keplr is connected.
-   * If the connected Keplr is browser's extension, the mode should be "extension".
-   * If the connected Keplr is on the mobile app with the embeded web browser, the mode should be "mobile-web".
+   * mode means that how DeepWallet is connected.
+   * If the connected DeepWallet is browser's extension, the mode should be "extension".
+   * If the connected DeepWallet is on the mobile app with the embeded web browser, the mode should be "mobile-web".
    */
   readonly mode: KeplrMode;
   defaultOptions: KeplrIntereactionOptions;

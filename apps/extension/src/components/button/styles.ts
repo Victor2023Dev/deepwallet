@@ -38,13 +38,13 @@ export const getLoadingColor = (
 ): string => {
   switch (buttonColor) {
     case "primary":
-      return ColorPalette["blue-200"];
+      return ColorPalette["shentu-200"];
     case "secondary":
       return ColorPalette["gray-200"];
     case "danger":
       return ColorPalette["red-400"];
     default:
-      return ColorPalette["blue-200"];
+      return ColorPalette["shentu-200"];
   }
 };
 
@@ -62,7 +62,7 @@ const buttonStyleFromColorAndMode: Record<
     light: {
       fill: {
         enabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["shentu-400"]};
 
           ${makeTextAndSvgColor(ColorPalette["white"])}
 
@@ -74,37 +74,11 @@ const buttonStyleFromColorAndMode: Record<
           }
         `,
         disabled: css`
-          background-color: ${ColorPalette["blue-400"]};
+          background-color: ${ColorPalette["shentu-400"]};
 
           ::after {
             background-color: ${ColorPalette["gray-300"]};
             opacity: 0.4;
-          }
-
-          ${makeTextAndSvgColor(ColorPalette["white"])}
-        `,
-      },
-    },
-    dark: {
-      fill: {
-        enabled: css`
-          background-color: ${ColorPalette["blue-400"]};
-
-          ${makeTextAndSvgColor(ColorPalette["white"])}
-
-          :hover {
-            ::after {
-              background-color: ${ColorPalette["gray-500"]};
-              opacity: 0.3;
-            }
-          }
-        `,
-        disabled: css`
-          background-color: ${ColorPalette["blue-400"]};
-
-          ::after {
-            background-color: ${ColorPalette["gray-600"]};
-            opacity: 0.7;
           }
 
           ${makeTextAndSvgColor(ColorPalette["white"])}
@@ -116,9 +90,9 @@ const buttonStyleFromColorAndMode: Record<
     light: {
       fill: {
         enabled: css`
-          background-color: ${ColorPalette["blue-50"]};
+          background-color: ${ColorPalette["shentu-50"]};
 
-          ${makeTextAndSvgColor(ColorPalette["blue-400"])}
+          ${makeTextAndSvgColor(ColorPalette["shentu-400"])}
 
           :hover {
             ::after {
@@ -129,36 +103,9 @@ const buttonStyleFromColorAndMode: Record<
         `,
 
         disabled: css`
-          background-color: ${ColorPalette["blue-50"]};
+          background-color: ${ColorPalette["shentu-50"]};
 
-          ${makeTextAndSvgColor(ColorPalette["blue-200"])}
-        `,
-      },
-    },
-    dark: {
-      fill: {
-        enabled: css`
-          background-color: ${ColorPalette["gray-400"]};
-
-          ${makeTextAndSvgColor(ColorPalette["white"])}
-
-          :hover {
-            ::after {
-              background-color: ${ColorPalette["gray-500"]};
-              opacity: 0.2;
-            }
-          }
-        `,
-
-        disabled: css`
-          background-color: ${ColorPalette["gray-400"]};
-
-          ::after {
-            background-color: ${ColorPalette["gray-600"]};
-            opacity: 0.7;
-          }
-
-          ${makeTextAndSvgColor(ColorPalette["white"])}
+          ${makeTextAndSvgColor(ColorPalette["shentu-200"])}
         `,
       },
     },
@@ -187,33 +134,6 @@ const buttonStyleFromColorAndMode: Record<
           }
 
           ${makeTextAndSvgColor(ColorPalette["red-400"])}
-        `,
-      },
-    },
-    dark: {
-      fill: {
-        enabled: css`
-          background-color: ${ColorPalette["red-100"]};
-
-          ${makeTextAndSvgColor(ColorPalette["red-400"])}
-
-          :hover {
-            ::after {
-              background-color: ${ColorPalette["gray-500"]};
-              opacity: 0.2;
-            }
-          }
-        `,
-
-        disabled: css`
-          background-color: ${ColorPalette["gray-400"]};
-
-          ::after {
-            background-color: ${ColorPalette["gray-600"]};
-            opacity: 0.7;
-          }
-
-          ${makeTextAndSvgColor(ColorPalette["white"])}
         `,
       },
     },
@@ -275,9 +195,9 @@ export const Styles = {
       right: 0;
     }
 
-    ${({ color, theme, mode, disabled }) =>
-      buttonStyleFromColorAndMode[color || "primary"][theme.mode || "dark"][
-        mode || "fill"
+    ${({ mode, disabled }) =>
+      buttonStyleFromColorAndMode["primary"]["light"][
+      mode || "fill"
       ][disabled ? "disabled" : "enabled"]}
   `,
   Left: styled.span`

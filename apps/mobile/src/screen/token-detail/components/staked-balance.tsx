@@ -64,7 +64,7 @@ export const StakedBalance: FunctionComponent<{
                   style={{
                     fontSize: 11,
                     fontWeight: '400',
-                    color: style.get('color-blue-100').color,
+                    color: style.get('color-shentu-100').color,
                   }}>
                   {`${new Dec(queryAPR.response.data.apr)
                     .mul(new Dec(100))

@@ -70,7 +70,7 @@
       i = 0,
       rest = string.length % 3; // To determine the final padding
 
-    for (; i < string.length; ) {
+    for (; i < string.length;) {
       if (
         (a = string.charCodeAt(i++)) > 255 ||
         (b = string.charCodeAt(i++)) > 255 ||
@@ -108,7 +108,7 @@
       r1,
       r2,
       i = 0;
-    for (; i < string.length; ) {
+    for (; i < string.length;) {
       bitmap =
         (b64.indexOf(string.charAt(i++)) << 18) |
         (b64.indexOf(string.charAt(i++)) << 12) |
@@ -119,8 +119,8 @@
         r1 === 64
           ? String.fromCharCode((bitmap >> 16) & 255)
           : r2 === 64
-          ? String.fromCharCode((bitmap >> 16) & 255, (bitmap >> 8) & 255)
-          : String.fromCharCode(
+            ? String.fromCharCode((bitmap >> 16) & 255, (bitmap >> 8) & 255)
+            : String.fromCharCode(
               (bitmap >> 16) & 255,
               (bitmap >> 8) & 255,
               bitmap & 255,

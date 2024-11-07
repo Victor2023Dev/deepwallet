@@ -400,10 +400,10 @@ const { initFn, keyRingService, analyticsService } = init(
         });
       }
 
-      if (lastEmbedChainInfos.find((c) => c.chainId === "shentu-2.2")) {
+      // if (lastEmbedChainInfos.find((c) => c.chainId === "shentu-2.2")) {
         await chainsService.addSuggestedChainInfo({
-          rpc: "https://rpc-certik.keplr.app",
-          rest: "https://lcd-certik.keplr.app",
+          rpc: "https://rpc.shentu.org",
+          rest: "https://rest.shentu.org",
           chainId: "shentu-2.2",
           chainName: "Shentu",
           chainSymbolImageUrl:
@@ -416,8 +416,8 @@ const { initFn, keyRingService, analyticsService } = init(
             coinImageUrl:
               "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/shentu-2.2/uctk.png",
           },
-          walletUrl: "https://wallet.keplr.app/chains/shentu",
-          walletUrlForStaking: "https://wallet.keplr.app/chains/shentu",
+          walletUrl: "https://explorer.shentu.org/validators",
+          walletUrlForStaking: "https://explorer.shentu.org/validators",
           bip44: {
             coinType: 118,
           },
@@ -451,7 +451,7 @@ const { initFn, keyRingService, analyticsService } = init(
           ],
           features: [],
         });
-      }
+      // }
 
       if (lastEmbedChainInfos.find((c) => c.chainId === "sifchain-1")) {
         await chainsService.addSuggestedChainInfo({

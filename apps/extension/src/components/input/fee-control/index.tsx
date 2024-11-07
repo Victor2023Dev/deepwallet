@@ -246,7 +246,7 @@ export const FeeControl: FunctionComponent<{
                   }
 
                   return theme.mode === "light"
-                    ? ColorPalette["blue-400"]
+                    ? ColorPalette["shentu-400"]
                     : ColorPalette["white"];
                 })()}
                 style={{
@@ -272,7 +272,7 @@ export const FeeControl: FunctionComponent<{
                           ),
                         ];
                       })()
-                        .map((fee) =>
+                        .map((fee: any) =>
                           fee
                             .quo(
                               new Dec(
@@ -379,8 +379,8 @@ export const FeeControl: FunctionComponent<{
                             borderRadius: "99999px",
                             backgroundColor:
                               theme.mode === "light"
-                                ? ColorPalette["blue-400"]
-                                : ColorPalette["blue-400"],
+                                ? ColorPalette["shentu-400"]
+                                : ColorPalette["shentu-400"],
                           }}
                         />
                       </Box>

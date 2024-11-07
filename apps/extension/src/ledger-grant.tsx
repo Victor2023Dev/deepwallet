@@ -41,7 +41,7 @@ configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.deepwallet = new Keplr(
   manifest.version,
   "core",
   new InExtensionMessageRequester()
@@ -71,9 +71,9 @@ const LedgerGrantPage: FunctionComponent = observer(() => {
       <Box maxWidth="47.75rem">
         <img
           src={require(theme.mode === "light"
-            ? "./public/assets/img/intro-logo-light.png"
-            : "./public/assets/img/intro-logo.png")}
-          alt="Keplr logo"
+            ? "./public/assets/img/intro-logo-light.svg"
+            : "./public/assets/img/intro-logo.svg")}
+          alt="DeepWallet logo"
           style={{
             width: "10.625rem",
             aspectRatio: "453 / 153",

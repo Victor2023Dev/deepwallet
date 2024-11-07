@@ -10,8 +10,8 @@ import {Stack} from '../stack';
 import {useStore} from '../../stores';
 import {StackNavProp} from '../../navigation';
 import {FormattedMessage} from 'react-intl';
-import {LinkIcon} from '../icon';
-import {Columns} from '../column';
+// import {LinkIcon} from '../icon';
+// import {Columns} from '../column';
 import {COMMUNITY_CHAIN_URL} from '../../config';
 
 export const DrawerContent: FunctionComponent = observer(() => {
@@ -120,12 +120,12 @@ export const DrawerContent: FunctionComponent = observer(() => {
                 isExternal: true,
               });
             }}>
-            <Columns sum={1} gutter={4} alignY="center">
+            {/* <Columns sum={1} gutter={4} alignY="center">
               <Text style={style.flatten(['h3', 'color-text-low'])}>
-                <FormattedMessage id="page.main.components.menu-bar.go-to-keplr-chain-registry" />
+                <FormattedMessage id="page.main.components.menu-bar.go-to-deepwallet-chain-registry" />
               </Text>
               <LinkIcon size={20} color={style.get('color-text-low').color} />
-            </Columns>
+            </Columns> */}
           </TouchableWithoutFeedback>
         </Stack>
       </Stack>

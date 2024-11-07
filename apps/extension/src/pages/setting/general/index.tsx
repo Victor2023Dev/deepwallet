@@ -81,30 +81,29 @@ export const SettingGeneralPage: FunctionComponent = observer(() => {
             onClick={() => navigate("/setting/contacts/list")}
           />
 
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.theme-title",
             })}
             endIcon={<RightArrowIcon />}
             onClick={() => navigate("/setting/general/theme")}
-          />
+          /> */}
 
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.manage-authz-title",
             })}
             endIcon={<RightArrowIcon />}
             onClick={() => navigate("/setting/general/authz")}
-          />
+          /> */}
 
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.link-kpelr-mobile-title",
             })}
             endIcon={<RightArrowIcon />}
-            onClick={() => navigate("/setting/general/link-keplr-mobile")}
-          />
-
+            onClick={() => navigate("/setting/general/link-deepwallet-mobile")}
+          /> */}
           {sidePanelSupported ? (
             <PageButton
               title={
@@ -149,7 +148,7 @@ export const SettingGeneralPage: FunctionComponent = observer(() => {
             }
           />
 
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.general.manage-non-native-chains-title",
             })}
@@ -158,7 +157,7 @@ export const SettingGeneralPage: FunctionComponent = observer(() => {
             })}
             endIcon={<RightArrowIcon />}
             onClick={() => navigate("/setting/general/delete-suggest-chain")}
-          />
+          /> */}
 
           <PageButton
             title={intl.formatMessage({

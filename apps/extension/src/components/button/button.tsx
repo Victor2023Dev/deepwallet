@@ -7,6 +7,10 @@ import { Box } from "../box";
 export const Button: FunctionComponent<ButtonProps> = ({
   onClick,
   style,
+  buttonStyle,
+  textColor,
+  disabledTextColor,
+  fontWeight,
   className,
   left,
   text,
@@ -23,6 +27,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
       mode={otherProps.mode}
     >
       <Styles.Button
+        style={buttonStyle}
         isLoading={isLoading}
         type={type || "button"}
         {...otherProps}
@@ -48,7 +53,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
           <Styles.TextOverrideIcon>{textOverrideIcon}</Styles.TextOverrideIcon>
         ) : null}
 
-        <Box style={{ opacity: isLoading || textOverrideIcon ? 0 : 1 }}>
+        <Box style={{ opacity: isLoading || textOverrideIcon ? 0 : 1, color: textColor || '#201B13', fontWeight: fontWeight || 400 }} >
           {text}
         </Box>
 

@@ -149,7 +149,7 @@ export const TransactionFeeModal = registerCardModal(
                   width={6}
                   height={6}
                   borderRadius={999}
-                  backgroundColor={style.get('color-blue-400').color}
+                  backgroundColor={style.get('color-shentu-400').color}
                 />
                 <Gutter size={8} />
 

@@ -303,7 +303,7 @@ export const FeeControl: FunctionComponent<{
                 width={6}
                 height={6}
                 borderRadius={999}
-                backgroundColor={style.get('color-blue-400').color}
+                backgroundColor={style.get('color-shentu-400').color}
               />
             </React.Fragment>
           ) : null}

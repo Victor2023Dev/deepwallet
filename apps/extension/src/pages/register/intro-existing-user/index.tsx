@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { RegisterSceneBox } from "../components/register-scene-box";
-import { Stack } from "../../../components/stack";
+// import { Stack } from "../../../components/stack";
 import { Button } from "../../../components/button";
 import {
   useSceneEvents,
@@ -13,8 +13,8 @@ import { Subtitle3 } from "../../../components/typography";
 import { Gutter } from "../../../components/gutter";
 import { useRegisterHeader } from "../components/header";
 import { RegisterH4 } from "../components/typography";
-import { ArrowDownTrayIcon, GoogleIcon } from "../../../components/icon";
-import * as KeplrWalletPrivate from "keplr-wallet-private";
+import { ArrowDownTrayIcon } from "../../../components/icon";
+// import * as KeplrWalletPrivate from "keplr-wallet-private";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 
@@ -40,7 +40,7 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
 
   return (
     <RegisterSceneBox>
-      <Columns sum={2} gutter="2.5rem">
+      <Columns sum={1}>
         <Column weight={1}>
           <Box height="100%">
             <RegisterH4
@@ -63,22 +63,22 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
                 id: "pages.register.intro-existing-user.recovery-button",
               })}
               size="large"
-              left={<ArrowDownTrayIcon width="1rem" height="1rem" />}
+              left={<ArrowDownTrayIcon color="black" width="1rem" height="1rem" />}
               onClick={() => {
                 sceneTransition.push("recover-mnemonic");
               }}
             />
           </Box>
         </Column>
-        <Box
+        {/* <Box
           width="1px"
           backgroundColor={
             theme.mode === "light"
               ? ColorPalette["gray-100"]
               : ColorPalette["gray-400"]
           }
-        />
-        <Column weight={1}>
+        /> */}
+        {/* <Column weight={1}>
           <Box height="100%">
             <RegisterH4
               color={
@@ -117,7 +117,7 @@ export const RegisterIntroExistingUserScene: FunctionComponent = () => {
               />
             </Stack>
           </Box>
-        </Column>
+        </Column> */}
       </Columns>
     </RegisterSceneBox>
   );

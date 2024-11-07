@@ -293,6 +293,47 @@ export const EmbedChainInfos: ChainInfo[] = [
     features: ['ibc-transfer'],
   },
   {
+    rpc: 'https://rpc.shentu.org',
+    rest: 'https://rest.shentu.org',
+    chainId: 'shentu-2.2',
+    chainName: 'Shentu',
+    stakeCurrency: {
+      coinDenom: 'CTK',
+      coinMinimalDenom: 'uctk',
+      coinDecimals: 6,
+      coinGeckoId: 'certik',
+    },
+    walletUrl:
+      process.env.NODE_ENV === 'production'
+        ? 'https://wallet.keplr.app/chains/shentu'
+        : 'http://localhost:8080/chains/shentu',
+    walletUrlForStaking:
+      process.env.NODE_ENV === 'production'
+        ? 'https://wallet.keplr.app/chains/shentu'
+        : 'http://localhost:8080/chains/shentu',
+    bip44: {
+      coinType: 118,
+    },
+    bech32Config: Bech32Address.defaultBech32Config('certik'),
+    currencies: [
+      {
+        coinDenom: 'CTK',
+        coinMinimalDenom: 'uctk',
+        coinDecimals: 6,
+        coinGeckoId: 'certik',
+      },
+    ],
+    feeCurrencies: [
+      {
+        coinDenom: 'CTK',
+        coinMinimalDenom: 'uctk',
+        coinDecimals: 6,
+        coinGeckoId: 'certik',
+      },
+    ],
+    features: ['ibc-transfer', 'ibc-go'],
+  },
+  {
     rpc: 'https://rpc-iris.keplr.app',
     rest: 'https://lcd-iris.keplr.app',
     chainId: 'irishub-1',

@@ -35,9 +35,9 @@ const zeroDec = new Dec(0);
 const NewTokenFoundButton = styled(TextButton)`
   ${Styles.Button} {
     color: ${(props) =>
-      props.theme.mode === "light"
-        ? ColorPalette["blue-400"]
-        : ColorPalette["gray-50"]};
+    props.theme.mode === "light"
+      ? ColorPalette["shentu-400"]
+      : ColorPalette["gray-50"]};
 
     :hover {
       color: ${(props) =>

@@ -7,8 +7,8 @@ order: 4
 
 *Warning: This is an experimental feature.*
 
-Keplr's 'suggest chain' feature allows front-ends to request adding new Cosmos-SDK based blockchains that isn't natively integrated to Keplr extension.  
-If the same chain is already added to Keplr, nothing will happen. If the user rejects the request, an error will be thrown.
+DeepWallet's 'suggest chain' feature allows front-ends to request adding new Cosmos-SDK based blockchains that isn't natively integrated to DeepWallet extension.  
+If the same chain is already added to DeepWallet, nothing will happen. If the user rejects the request, an error will be thrown.
 
 This allows all Cosmos-SDK blockchains to have permissionless, instant wallet and transaction signing support for front-ends.
 
@@ -55,14 +55,14 @@ experimentalSuggestChain(chainInfo: SuggestingChainInfo): Promise<void>
 |-|-|-|
 | `rpc` | http://123.456.789.012:26657 | Address of RPC endpoint of the chain. Default port is 26657 |
 | `rest` | http://123.456.789.012:1317 | Address of REST/API endpoint of the chain. Default port is 1317. Must be enabled in `app.toml` |
-| `chainId` | mychain-1 | Keplr has a feature which automatically detects when the chain-id has changed, and automatically update to support new chain. However, it should be noted that this functionality will only work when the chain-id follows the {identifier}-{version}(ex.cosmoshub-4) format. Therefore, it is recommended that the chain follows the chain-id format. |
+| `chainId` | mychain-1 | DeepWallet has a feature which automatically detects when the chain-id has changed, and automatically update to support new chain. However, it should be noted that this functionality will only work when the chain-id follows the {identifier}-{version}(ex.cosmoshub-4) format. Therefore, it is recommended that the chain follows the chain-id format. |
 | `stakeCurrency` | ```{     coinDenom: "ATOM",     coinMinimalDenom: "uatom",     coinDecimals: 6,     coinGeckoId: "cosmos",   }``` | Information on the staking token of the chain |
-| `walletUrlForStaking` | https://wallet.keplr.app/chains/cosmos-hub | The URL for the staking interface frontend for the chain. If you don't have a staking interface built, you can use [Lunie Light](https://github.com/luniehq/lunie-light) which supports Keplr. |
+| `walletUrlForStaking` | https://wallet.keplr.app/chains/cosmos-hub | The URL for the staking interface frontend for the chain. If you don't have a staking interface built, you can use [Lunie Light](https://github.com/luniehq/lunie-light) which supports DeepWallet. |
 | `bip44.coinType` | 118 | BIP44 coin type for address derivation. We recommend using `118`(Cosmos Hub) as this would provide good Ledger hardware wallet compatibility by utilizing the Cosmos Ledger app. |
 | `bech32Config` | ```{ bech32PrefixAccAddr: "cosmos", bech32PrefixAccPub: "cosmos" + "pub", bech32PrefixValAddr: "cosmos" + "valoper", bech32PrefixValPub: "cosmos" + "valoperpub", bech32PrefixConsAddr: "cosmos" + "valcons", bech32PrefixConsPub: "cosmos" + "valconspub"}``` | Bech32 config using the address prefix of the chain |
 | `currencies` | ```[   {     coinDenom: "ATOM",     coinMinimalDenom: "uatom",     coinDecimals: 6,     coinGeckoId: "cosmos",   }, ]``` | (TBD) |
 | `feeCurrencies` | ```[   {     coinDenom: "ATOM",     coinMinimalDenom: "uatom",     coinDecimals: 6,     coinGeckoId: "cosmos",     gasPriceStep: {     low: 0.01,     avergage: 0.025,     high: 0.04     }   }, ]``` | List of fee tokens accepted by the chain's validator. Each fee token can have gas price step. Gas price step is used to set the fee of the transaction. If this field is empty, it would use the default gas price step (low: 0.01, average: 0.025, high: 0.04). |
-| `features` | [] | `secretwasm` - Secret Network WASM smart contract transaction support `ibc-transfer` - For IBC transfers (ICS 20) enabled chains. For Stargate (cosmos-sdk v0.40+) chains, Keplr will check the on-chain params and automatically enable IBC transfers if it’s available) `cosmwasm` - For CosmWasm smart contract support (currently broken, in the process of being fixed)  `ibc-go` - For chains that use the ibc-go module separated from the cosmos-sdk |
+| `features` | [] | `secretwasm` - Secret Network WASM smart contract transaction support `ibc-transfer` - For IBC transfers (ICS 20) enabled chains. For Stargate (cosmos-sdk v0.40+) chains, DeepWallet will check the on-chain params and automatically enable IBC transfers if it’s available) `cosmwasm` - For CosmWasm smart contract support (currently broken, in the process of being fixed)  `ibc-go` - For chains that use the ibc-go module separated from the cosmos-sdk |
 :::  
 
 Copy and paste example:
@@ -113,4 +113,4 @@ await window.keplr.experimentalSuggestChain({
 });
 ```
 
-Keplr supports the basic the `x/bank` module's send feature and balance query. Also, it is able to show the staking reward percentage from the `supply` and `mint` module. (For Stargate chains, Keplr will find the supply through the `bank` module).
+DeepWallet supports the basic the `x/bank` module's send feature and balance query. Also, it is able to show the staking reward percentage from the `supply` and `mint` module. (For Stargate chains, DeepWallet will find the supply through the `bank` module).

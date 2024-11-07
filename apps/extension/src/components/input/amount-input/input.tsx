@@ -358,15 +358,15 @@ const MaxButton: FunctionComponent<{
       color={
         isMax
           ? theme.mode === "light"
-            ? ColorPalette["blue-400"]
+            ? ColorPalette["shentu-400"]
             : ColorPalette["gray-300"]
           : theme.mode === "light"
-          ? ColorPalette["blue-400"]
+          ? ColorPalette["shentu-400"]
           : ColorPalette["gray-10"]
       }
       backgroundColor={
         theme.mode === "light"
-          ? ColorPalette["blue-50"]
+          ? ColorPalette["shentu-50"]
           : ColorPalette["gray-500"]
       }
       borderRadius="0.25rem"
@@ -374,10 +374,10 @@ const MaxButton: FunctionComponent<{
       borderColor={
         isMax
           ? theme.mode === "light"
-            ? ColorPalette["blue-200"]
+            ? ColorPalette["shentu-200"]
             : ColorPalette["gray-300"]
           : theme.mode === "light"
-          ? ColorPalette["blue-50"]
+          ? ColorPalette["shentu-50"]
           : ColorPalette["gray-500"]
       }
       hover={{
@@ -386,21 +386,21 @@ const MaxButton: FunctionComponent<{
             ? ColorPalette["blue-500"]
             : ColorPalette["gray-300"]
           : theme.mode === "light"
-          ? ColorPalette["blue-400"]
+          ? ColorPalette["shentu-400"]
           : ColorPalette["white"],
         backgroundColor: isMax
           ? theme.mode === "light"
-            ? ColorPalette["blue-100"]
+            ? ColorPalette["shentu-100"]
             : ColorPalette["gray-500"]
           : theme.mode === "light"
-          ? ColorPalette["blue-100"]
+          ? ColorPalette["shentu-100"]
           : ColorPalette["gray-550"],
         borderColor: isMax
           ? theme.mode === "light"
-            ? ColorPalette["blue-300"]
+            ? ColorPalette["shentu-300"]
             : ColorPalette["gray-400"]
           : theme.mode === "light"
-          ? ColorPalette["blue-100"]
+          ? ColorPalette["shentu-100"]
           : ColorPalette["gray-550"],
       }}
       onClick={(e) => {

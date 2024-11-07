@@ -608,7 +608,7 @@ export class KeyRingEthereumService {
         case "eth_subscribe": {
           if (!currentChainEVMInfo.websocket) {
             throw new Error(
-              `WebSocket endpoint for current chain has not been provided to Keplr.`
+              `WebSocket endpoint for current chain has not been provided to DeepWallet.`
             );
           }
 
@@ -692,7 +692,7 @@ export class KeyRingEthereumService {
 
           if (!currentChainEVMInfo.websocket) {
             throw new Error(
-              `WebSocket endpoint for current chain has not been provided to Keplr.`
+              `WebSocket endpoint for current chain has not been provided to DeepWallet.`
             );
           }
 

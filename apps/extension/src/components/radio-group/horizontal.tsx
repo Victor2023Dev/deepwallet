@@ -21,6 +21,7 @@ export const HorizontalRadioGroup: FunctionComponent<RadioGroupProps> = ({
         return (
           <React.Fragment key={item.key}>
             <Styles.Button
+              style={{ background: selected ? "#FBBC49" : "#FFDEAC", color: selected ? "#201B13" : "rgba(32, 27, 19, 0.80)" }}
               type="button"
               size={size}
               selected={selected}

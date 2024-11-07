@@ -44,7 +44,7 @@ const fileRule = {
   },
 };
 
-const keplrLogoBase64 = `data:image/png;base64,${fs.readFileSync(
+const shentuLogoBase64 = `data:image/png;base64,${fs.readFileSync(
   "src/public/assets/icon/icon-128.png",
   "base64"
 )}`;
@@ -187,10 +187,13 @@ module.exports = {
       WC_PROJECT_ID: "",
       KEPLR_EXT_EIP6963_PROVIDER_INFO_NAME: "Keplr",
       KEPLR_EXT_EIP6963_PROVIDER_INFO_RDNS: "app.keplr",
-      KEPLR_EXT_EIP6963_PROVIDER_INFO_ICON: keplrLogoBase64,
+      KEPLR_EXT_EIP6963_PROVIDER_INFO_ICON: `data:image/png;base64,${fs.readFileSync(
+        "src/public/assets/icon/icon-128.png",
+        "base64"
+      )}`,
       KEPLR_EXT_STARKNET_PROVIDER_INFO_ID: "keplr",
       KEPLR_EXT_STARKNET_PROVIDER_INFO_NAME: "Keplr",
-      KEPLR_EXT_STARKNET_PROVIDER_INFO_ICON: keplrLogoBase64,
+      KEPLR_EXT_STARKNET_PROVIDER_INFO_ICON: shentuLogoBase64,
       SKIP_API_KEY: "",
     }),
     new ForkTsCheckerWebpackPlugin(),

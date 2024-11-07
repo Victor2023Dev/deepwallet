@@ -1,4 +1,15 @@
 export const ColorPalette = {
+  "shentu-10": "#FFFAF0",
+  "shentu-50": "#FFF4E0",
+  "shentu-100": "FFEAC4",
+  "shentu-200": "#FFdC9C",
+  "shentu-300": "#FFCE75",
+  "shentu-400": "#FBBC49",
+  "shentu-500": "#E39D1B",
+  "shentu-600": "#9E6A08",
+  "shentu-700": "#473108",
+  "shentu-800": "#1A1203",
+
   "blue-10": "#F6F8FF",
   "blue-50": "#F0F3FF",
   "blue-100": "#E4E9FF",

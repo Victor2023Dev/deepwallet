@@ -1,6 +1,48 @@
 import { Bech32Address } from "@keplr-wallet/cosmos";
 import { ChainInfo, ModularChainInfo } from "@keplr-wallet/types";
 
+export const ShentuChainInfo = {
+  rpc: "https://rpc.shentu.org",
+  rest: "https://rest.shentu.org",
+  chainId: "shentu-2.2",
+  chainName: "Shentu",
+  stakeCurrency: {
+    coinDenom: "CTK",
+    coinMinimalDenom: "uctk",
+    coinDecimals: 6,
+    coinGeckoId: "certik",
+  },
+  walletUrl:
+    process.env.NODE_ENV === "production"
+      ? "https://wallet.keplr.app/chains/shentu"
+      : "http://localhost:8080/chains/shentu",
+  walletUrlForStaking:
+    process.env.NODE_ENV === "production"
+      ? "https://wallet.keplr.app/chains/shentu"
+      : "http://localhost:8080/chains/shentu",
+  bip44: {
+    coinType: 118,
+  },
+  bech32Config: Bech32Address.defaultBech32Config("shentu"),
+  currencies: [
+    {
+      coinDenom: "CTK",
+      coinMinimalDenom: "uctk",
+      coinDecimals: 6,
+      coinGeckoId: "certik",
+    },
+  ],
+  feeCurrencies: [
+    {
+      coinDenom: "CTK",
+      coinMinimalDenom: "uctk",
+      coinDecimals: 6,
+      coinGeckoId: "certik",
+    },
+  ],
+  features: ["ibc-transfer", "ibc-go"],
+}
+
 export const EmbedChainInfos: (ChainInfo | ModularChainInfo)[] = [
   {
     rpc: "https://rpc-cosmoshub.keplr.app",

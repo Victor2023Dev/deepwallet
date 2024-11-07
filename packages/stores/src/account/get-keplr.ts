@@ -7,12 +7,12 @@ export const getKeplrFromWindow: () => Promise<
     return undefined;
   }
 
-  if (window.keplr) {
-    return window.keplr;
+  if (window.deepwallet) {
+    return window.deepwallet;
   }
 
   if (document.readyState === "complete") {
-    return window.keplr;
+    return window.deepwallet;
   }
 
   return new Promise((resolve) => {
@@ -21,7 +21,7 @@ export const getKeplrFromWindow: () => Promise<
         event.target &&
         (event.target as Document).readyState === "complete"
       ) {
-        resolve(window.keplr);
+        resolve(window.deepwallet);
         document.removeEventListener("readystatechange", documentStateChange);
       }
     };

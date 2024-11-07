@@ -592,11 +592,11 @@ export const MainPage: FunctionComponent<{
                 });
 
                 browser.tabs.create({
-                  url: "https://wallet.keplr.app/?modal=staking",
+                  url: "https://explorer.shentu.org/validators",
                 });
               }}
             >
-              <FormattedMessage id="page.main.chart.stake-with-keplr-dashboard-button" />
+              <FormattedMessage id="page.main.chart.stake-with-deepwallet-dashboard-button" />
               <Box color={ColorPalette["gray-300"]} marginLeft="0.5rem">
                 <ArrowTopRightOnSquareIcon width="1rem" height="1rem" />
               </Box>
@@ -612,7 +612,7 @@ export const MainPage: FunctionComponent<{
           */}
           <Gutter size="0" />
 
-          {tabStatus === "available" && !isNotReady ? (
+          {/* {tabStatus === "available" && !isNotReady ? (
             <StakeWithKeplrDashboardButton
               type="button"
               onClick={(e) => {
@@ -626,12 +626,12 @@ export const MainPage: FunctionComponent<{
                 });
               }}
             >
-              <FormattedMessage id="page.main.chart.manage-portfolio-in-keplr-dashboard" />
+              <FormattedMessage id="page.main.chart.manage-portfolio-in-deepwallet-dashboard" />
               <Box color={ColorPalette["gray-300"]} marginLeft="0.5rem">
                 <ArrowTopRightOnSquareIcon width="1rem" height="1rem" />
               </Box>
             </StakeWithKeplrDashboardButton>
-          ) : null}
+          ) : null} */}
           {!isNotReady ? (
             <Stack gutter="0.75rem">
               {tabStatus === "available" ? (
@@ -713,8 +713,8 @@ export const MainPage: FunctionComponent<{
           )}
 
           {tabStatus === "available" &&
-          uiConfigStore.isDeveloper &&
-          !isNotReady ? (
+            uiConfigStore.isDeveloper &&
+            !isNotReady ? (
             <IBCTransferView />
           ) : null}
         </Stack>
@@ -765,10 +765,10 @@ export const MainPage: FunctionComponent<{
                   image:
                     scene.image && scene.aspectRatio
                       ? {
-                          default: scene.image.default,
-                          light: scene.image.light,
-                          aspectRatio: scene.aspectRatio,
-                        }
+                        default: scene.image.default,
+                        light: scene.image.light,
+                        aspectRatio: scene.aspectRatio,
+                      }
                       : undefined,
                   paragraph: scene.paragraph,
                   isSidePanelBeta: info.isSidePanelBeta,
@@ -794,12 +794,13 @@ const Styles = {
 
     &:hover {
       color: ${(props) =>
-        props.theme.mode === "light"
-          ? ColorPalette["gray-200"]
-          : ColorPalette["gray-300"]};
+      props.theme.mode === "light"
+        ? ColorPalette["gray-200"]
+        : ColorPalette["gray-300"]};
     }
   `,
 };
+
 
 const visibleTranslateY = -40;
 const invisibleTranslateY = 100;
@@ -1073,3 +1074,4 @@ const RefreshButton: FunctionComponent<{
     </animated.div>
   );
 });
+

@@ -1,6 +1,6 @@
 module.exports = {
   theme: "cosmos",
-  title: "Keplr wallet",
+  title: "DeepWallet wallet",
   locales: {
     "/": {
       lang: "en-US",
@@ -11,13 +11,13 @@ module.exports = {
     ["link", { rel: "icon", type: "image/png", href: "/favicon-256.png" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:url", content: "https://docs.keplr.app" }],
-    ["meta", { property: "og:title", content: "Documentation | Keplr Wallet" }],
+    ["meta", { property: "og:title", content: "Documentation | DeepWallet Wallet" }],
     [
       "meta",
       {
         property: "og:description",
         content:
-          "Keplr is a non-custodial blockchain wallets for webpages that allow users to interact with blockchain applications.",
+          "DeepWallet is a non-custodial blockchain wallets for webpages that allow users to interact with blockchain applications.",
       },
     ],
     [
@@ -45,7 +45,7 @@ module.exports = {
           title: "API",
           children: [
             {
-              title: "Keplr API",
+              title: "DeepWallet API",
               directory: true,
               path: "/api",
             },

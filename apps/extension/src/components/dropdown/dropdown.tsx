@@ -20,7 +20,6 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   menuContainerMaxHeight,
   allowSearch,
   searchExcludedKeys,
-  direction = "down",
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const wrapperRef = useRef<HTMLInputElement>(null);
@@ -125,36 +124,24 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
             </Styles.Text>
           </Box>
           <Column weight={1} />
-          <Box
-            style={{
-              transform: direction === "up" ? "scaleY(-1)" : undefined,
-            }}
-          >
-            <ArrowDropDownIcon width="1.25rem" height="1.25rem" />
-          </Box>
+          <ArrowDropDownIcon width="1.25rem" height="1.25rem" />
         </Columns>
       </Styles.SelectedContainer>
-      <Styles.MenuContainer
-        isOpen={isOpen && filteredItems.length > 0}
-        direction={direction}
-        size={size}
-      >
+      <Styles.MenuContainer isOpen={isOpen && filteredItems.length > 0}>
         <Styles.MenuContainerScroll
           menuContainerMaxHeight={menuContainerMaxHeight}
         >
-          <Styles.MenuItemsContainer direction={direction}>
-            {filteredItems.map((item) => (
-              <Styles.MenuItem
-                key={item.key}
-                onClick={() => {
-                  onSelect(item.key);
-                  setIsOpen(false);
-                }}
-              >
-                {item.label}
-              </Styles.MenuItem>
-            ))}
-          </Styles.MenuItemsContainer>
+          {filteredItems.map((item) => (
+            <Styles.MenuItem
+              key={item.key}
+              onClick={() => {
+                onSelect(item.key);
+                setIsOpen(false);
+              }}
+            >
+              {item.label}
+            </Styles.MenuItem>
+          ))}
         </Styles.MenuContainerScroll>
       </Styles.MenuContainer>
     </Styles.Container>

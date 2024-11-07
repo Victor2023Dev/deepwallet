@@ -40,7 +40,7 @@ import {
 } from "starknet";
 
 export interface ProxyRequest {
-  type: "proxy-request";
+  type: "deepwallet-proxy-request" | "proxy-request";
   id: string;
   method: keyof IKeplr;
   args: any[];
@@ -113,8 +113,8 @@ export class Keplr implements IKeplr {
       })
       .join("");
 
-    const proxyMessage: ProxyRequest = {
-      type: "proxy-request",
+    const deepwalletProxyMessage: ProxyRequest = {
+      type: "deepwallet-proxy-request",
       id,
       method,
       args: JSONUint8Array.wrap(args),
@@ -151,7 +151,7 @@ export class Keplr implements IKeplr {
 
       window.addEventListener("message", receiveResponse);
 
-      postMessage(proxyMessage);
+      postMessage(deepwalletProxyMessage);
     });
   }
 
@@ -211,7 +211,7 @@ export class Keplr implements IKeplr {
       chainInfo.features?.includes("no-legacy-stdTx")
     ) {
       console.warn(
-        "“stargate”, “no-legacy-stdTx” feature has been deprecated. The launchpad is no longer supported, thus works without the two features. We would keep the aforementioned two feature for a while, but the upcoming update would potentially cause errors. Remove the two feature."
+        `"stargate", "no-legacy-stdTx" feature has been deprecated. The launchpad is no longer supported, thus works without the two features. We would keep the aforementioned two feature for a while, but the upcoming update would potentially cause errors. Remove the two feature.`
       );
     }
 
@@ -765,8 +765,8 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
       })
       .join("");
 
-    const proxyMessage: ProxyRequest = {
-      type: "proxy-request",
+    const deepwalletProxyMessage: ProxyRequest = {
+      type: "deepwallet-proxy-request",
       id,
       method: "ethereum",
       args: JSONUint8Array.wrap(args),
@@ -813,7 +813,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
       window.addEventListener("message", receiveResponse);
 
-      postMessage(proxyMessage);
+      postMessage(deepwalletProxyMessage);
     });
   }
 

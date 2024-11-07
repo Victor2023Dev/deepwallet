@@ -391,7 +391,7 @@ const CopyAddressItem: FunctionComponent<{
                           if (!blockInteraction && isBookmarkPress) {
                             return style.get('color-blue-500').color;
                           }
-                          return style.get('color-blue-400').color;
+                          return style.get('color-shentu-400').color;
                         }
 
                         if (!blockInteraction && isBookmarkPress) {

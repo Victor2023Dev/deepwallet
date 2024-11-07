@@ -98,22 +98,11 @@ export const BottomTabsRouteProvider: FunctionComponent<
                 >
                   <div
                     style={{
-                      position: "relative",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
                       opacity: isNotReady ? 0 : 1,
                       color: (() => {
-                        if (theme.mode === "light") {
-                          return isActive
-                            ? ColorPalette["blue-400"]
-                            : ColorPalette["gray-100"];
-                        }
-
                         return isActive
-                          ? ColorPalette["white"]
-                          : ColorPalette["gray-400"];
+                          ? ColorPalette["shentu-400"]
+                          : "#807567";
                       })(),
                     }}
                   >
@@ -138,15 +127,9 @@ export const BottomTabsRouteProvider: FunctionComponent<
                             wordBreak: "keep-all",
                           }}
                           color={(() => {
-                            if (theme.mode === "light") {
-                              return isActive
-                                ? ColorPalette["blue-400"]
-                                : ColorPalette["gray-200"];
-                            }
-
                             return isActive
-                              ? ColorPalette["white"]
-                              : ColorPalette["gray-300"];
+                              ? ColorPalette["shentu-400"]
+                              : "#807567";
                           })()}
                         >
                           {tab.text}

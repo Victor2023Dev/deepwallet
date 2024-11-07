@@ -183,7 +183,7 @@ export const TxPendingResultScreen: FunctionComponent = observer(() => {
           'width-122',
           'height-122',
           'border-width-8',
-          'border-color-blue-300',
+          'border-color-shentu-300',
           'border-radius-64',
         ])}>
         <Box
@@ -201,15 +201,15 @@ export const TxPendingResultScreen: FunctionComponent = observer(() => {
             colorFilters={[
               {
                 keypath: '#dot01',
-                color: style.flatten(['color-blue-300']).color,
+                color: style.flatten(['color-shentu-300']).color,
               },
               {
                 keypath: '#dot02',
-                color: style.flatten(['color-blue-300']).color,
+                color: style.flatten(['color-shentu-300']).color,
               },
               {
                 keypath: '#dot03',
-                color: style.flatten(['color-blue-300']).color,
+                color: style.flatten(['color-shentu-300']).color,
               },
             ]}
             autoPlay

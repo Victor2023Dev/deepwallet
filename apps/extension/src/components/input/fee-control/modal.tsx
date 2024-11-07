@@ -177,8 +177,8 @@ export const TransactionFeeModal: FunctionComponent<{
                         borderRadius: "99999px",
                         backgroundColor:
                           theme.mode === "light"
-                            ? ColorPalette["blue-400"]
-                            : ColorPalette["blue-400"],
+                            ? ColorPalette["shentu-400"]
+                            : ColorPalette["shentu-400"],
                         marginRight: "0.3rem",
                       }}
                     />
@@ -277,7 +277,7 @@ export const TransactionFeeModal: FunctionComponent<{
             })}
             menuContainerMaxHeight="10rem"
             items={feeConfig.selectableFeeCurrencies
-              .filter((cur, i) => {
+              .filter((cur: any, i: number) => {
                 if (i === 0) {
                   return true;
                 }
@@ -289,7 +289,7 @@ export const TransactionFeeModal: FunctionComponent<{
 
                 return balance.toDec().gt(new Dec(0));
               })
-              .map((cur) => {
+              .map((cur: any) => {
                 return {
                   key: cur.coinMinimalDenom,
                   label: cur.coinDenom,
@@ -298,7 +298,7 @@ export const TransactionFeeModal: FunctionComponent<{
             selectedItemKey={feeConfig.fees[0]?.currency.coinMinimalDenom}
             onSelect={(key) => {
               const currency = feeConfig.selectableFeeCurrencies.find(
-                (cur) => cur.coinMinimalDenom === key
+                (cur: any) => cur.coinMinimalDenom === key
               );
               if (currency) {
                 if (feeConfig.type !== "manual") {
@@ -522,8 +522,7 @@ const FeeSelector: FunctionComponent<{
         <FeeSelectorStyle.Item
           style={{
             borderRadius: "0.5rem 0 0 0.5rem",
-            borderRight: `1px solid ${
-              theme.mode === "light"
+            borderRight: `1px solid ${theme.mode === "light"
                 ? ColorPalette["gray-100"]
                 : ColorPalette["gray-400"]
             }`,

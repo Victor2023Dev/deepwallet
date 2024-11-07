@@ -10,13 +10,11 @@ export const GlobalStyle = createGlobalStyle`
   
   html {
     // TODO: Change the scheme according to theme after theme feature is implemented.
-    color-scheme: ${(props) =>
-      props.theme.mode === "light" ? "light" : "dark"};
+    color-scheme: light;
   }
   
   html, body {
     font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
     
     &[data-lang="ko"] {
       font-family: 'NotoSansKR', sans-serif;
@@ -30,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
         : ColorPalette.white};
     background: ${(props) =>
       props.theme.mode === "light"
-        ? ColorPalette["light-gradient"]
+        ? "#F4F3F2"
         : ColorPalette["gray-700"]};
 
     &[data-white-background="true"] {

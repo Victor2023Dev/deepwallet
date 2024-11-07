@@ -484,10 +484,10 @@ const CopyAddressItem: FunctionComponent<{
                     if (isBookmarked) {
                       if (!blockInteraction && isBookmarkHover) {
                         return theme.mode === "light"
-                          ? ColorPalette["blue-300"]
+                          ? ColorPalette["shentu-300"]
                           : ColorPalette["blue-500"];
                       }
-                      return ColorPalette["blue-400"];
+                      return ColorPalette["shentu-400"];
                     }
 
                     if (!blockInteraction && isBookmarkHover) {

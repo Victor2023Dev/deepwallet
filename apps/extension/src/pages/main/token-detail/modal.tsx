@@ -72,7 +72,6 @@ export const TokenDetailModal: FunctionComponent<{
     starknetQueriesStore,
     priceStore,
     price24HChangesStore,
-    skipQueriesStore,
   } = useStore();
 
   const theme = useTheme();
@@ -223,37 +222,37 @@ export const TokenDetailModal: FunctionComponent<{
       },
       disabled: isIBCCurrency,
     },
-    {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="none"
-          viewBox="0 0 20 20"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.56"
-            d="M6.25 17.5L2.5 13.75m0 0L6.25 10M2.5 13.75h11.25m0-11.25l3.75 3.75m0 0L13.75 10m3.75-3.75H6.25"
-          />
-        </svg>
-      ),
-      text: "Swap",
-      onClick: () => {
-        navigate(
-          `/ibc-swap?chainId=${chainId}&coinMinimalDenom=${coinMinimalDenom}&outChainId=${
-            chainStore.getChain("noble").chainId
-          }&outCoinMinimalDenom=uusdc`
-        );
-      },
-      disabled: !skipQueriesStore.queryIBCSwap.isSwappableCurrency(
-        chainId,
-        currency
-      ),
-    },
+    // {
+    //   icon: (
+    //     <svg
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       width="20"
+    //       height="20"
+    //       fill="none"
+    //       viewBox="0 0 20 20"
+    //     >
+    //       <path
+    //         stroke="currentColor"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //         strokeWidth="1.56"
+    //         d="M6.25 17.5L2.5 13.75m0 0L6.25 10M2.5 13.75h11.25m0-11.25l3.75 3.75m0 0L13.75 10m3.75-3.75H6.25"
+    //       />
+    //     </svg>
+    //   ),
+    //   text: "Swap",
+    //   onClick: () => {
+    //     navigate(
+    //       `/ibc-swap?chainId=${chainId}&coinMinimalDenom=${coinMinimalDenom}&outChainId=${
+    //         chainStore.getChain("noble").chainId
+    //       }&outCoinMinimalDenom=uusdc`
+    //     );
+    //   },
+    //   disabled: !skipQueriesStore.queryIBCSwap.isSwappableCurrency(
+    //     chainId,
+    //     currency
+    //   ),
+    // },
     {
       icon: (
         <svg
@@ -398,7 +397,7 @@ export const TokenDetailModal: FunctionComponent<{
                 color={
                   isIBCCurrency
                     ? theme.mode === "light"
-                      ? ColorPalette["blue-400"]
+                      ? ColorPalette["shentu-400"]
                       : ColorPalette["white"]
                     : theme.mode === "light"
                     ? ColorPalette["gray-500"]

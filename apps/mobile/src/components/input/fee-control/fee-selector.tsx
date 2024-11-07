@@ -40,7 +40,7 @@ export const FeeSelector: FunctionComponent<{
             paddingY={12}
             backgroundColor={
               feeConfig.type === 'low'
-                ? style.get('color-blue-400').color
+                ? style.get('color-shentu-400').color
                 : style.get('color-gray-500').color
             }
             style={{
@@ -62,7 +62,7 @@ export const FeeSelector: FunctionComponent<{
                 style={style.flatten([
                   'text-caption2',
                   feeConfig.type === 'low'
-                    ? 'color-blue-200'
+                    ? 'color-shentu-200'
                     : 'color-gray-300',
                 ])}>
                 {priceStore
@@ -79,7 +79,7 @@ export const FeeSelector: FunctionComponent<{
             <Text
               style={style.flatten([
                 'text-caption1',
-                feeConfig.type === 'low' ? 'color-blue-100' : 'color-gray-300',
+                feeConfig.type === 'low' ? 'color-shentu-100' : 'color-gray-300',
               ])}>
               {feeConfig
                 .getFeeTypePrettyForFeeCurrency(feeCurrency, 'low')
@@ -107,7 +107,7 @@ export const FeeSelector: FunctionComponent<{
             paddingY={12}
             backgroundColor={
               feeConfig.type === 'average'
-                ? style.get('color-blue-400').color
+                ? style.get('color-shentu-400').color
                 : style.get('color-gray-500').color
             }>
             <Text
@@ -125,7 +125,7 @@ export const FeeSelector: FunctionComponent<{
                 style={style.flatten([
                   'text-caption2',
                   feeConfig.type === 'average'
-                    ? 'color-blue-200'
+                    ? 'color-shentu-200'
                     : 'color-gray-300',
                 ])}>
                 {priceStore
@@ -143,7 +143,7 @@ export const FeeSelector: FunctionComponent<{
               style={style.flatten([
                 'text-caption1',
                 feeConfig.type === 'average'
-                  ? 'color-blue-100'
+                  ? 'color-shentu-100'
                   : 'color-gray-300',
               ])}>
               {feeConfig
@@ -172,7 +172,7 @@ export const FeeSelector: FunctionComponent<{
             paddingY={12}
             backgroundColor={
               feeConfig.type === 'high'
-                ? style.get('color-blue-400').color
+                ? style.get('color-shentu-400').color
                 : style.get('color-gray-500').color
             }
             style={{
@@ -194,7 +194,7 @@ export const FeeSelector: FunctionComponent<{
                 style={style.flatten([
                   'text-caption2',
                   feeConfig.type === 'high'
-                    ? 'color-blue-200'
+                    ? 'color-shentu-200'
                     : 'color-gray-300',
                 ])}>
                 {priceStore
@@ -211,7 +211,7 @@ export const FeeSelector: FunctionComponent<{
             <Text
               style={style.flatten([
                 'text-caption1',
-                feeConfig.type === 'high' ? 'color-blue-100' : 'color-gray-300',
+                feeConfig.type === 'high' ? 'color-shentu-100' : 'color-gray-300',
               ])}>
               {feeConfig
                 .getFeeTypePrettyForFeeCurrency(feeCurrency, 'high')

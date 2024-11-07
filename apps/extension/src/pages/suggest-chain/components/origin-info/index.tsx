@@ -13,11 +13,11 @@ const Styles = {
   Chip: styled.div`
     color: ${(props) =>
       props.theme.mode === "light"
-        ? ColorPalette["blue-400"]
+        ? ColorPalette["shentu-400"]
         : ColorPalette["gray-200"]};
     background-color: ${(props) =>
       props.theme.mode === "light"
-        ? ColorPalette["blue-50"]
+        ? ColorPalette["shentu-50"]
         : ColorPalette["gray-500"]};
 
     padding: 0.375rem 0.75rem;

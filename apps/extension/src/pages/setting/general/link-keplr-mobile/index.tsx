@@ -106,11 +106,11 @@ export const SettingGeneralLinkKeplrMobilePage: FunctionComponent = observer(
           if (res.length === 0) {
             confirm.confirm(
               intl.formatMessage({
-                id: "page.setting.general.link-keplr-mobile.confirm-title",
+                id: "page.setting.general.link-deepwallet-mobile.confirm-title",
               }),
               <React.Fragment>
                 <FormattedMessage
-                  id="page.setting.general.link-keplr-mobile.confirm-paragraph"
+                  id="page.setting.general.link-deepwallet-mobile.confirm-paragraph"
                   values={{ br: <br /> }}
                 />
               </React.Fragment>,
@@ -195,10 +195,10 @@ const EnterPasswordView: FunctionComponent<{
       <Styles.Container gutter="0.75rem">
         <GuideBox
           title={intl.formatMessage({
-            id: "page.setting.general.link-keplr-mobile.enter-password-view.guide-title",
+            id: "page.setting.general.link-deepwallet-mobile.enter-password-view.guide-title",
           })}
           paragraph={intl.formatMessage({
-            id: "page.setting.general.link-keplr-mobile.enter-password-view.guide-paragraph",
+            id: "page.setting.general.link-deepwallet-mobile.enter-password-view.guide-paragraph",
           })}
         />
 
@@ -216,12 +216,12 @@ const EnterPasswordView: FunctionComponent<{
         </YAxis>
 
         <Styles.Paragraph>
-          <FormattedMessage id="page.setting.general.link-keplr-mobile.enter-password-view.paragraph" />
+          <FormattedMessage id="page.setting.general.link-deepwallet-mobile.enter-password-view.paragraph" />
         </Styles.Paragraph>
 
         <TextInput
           label={intl.formatMessage({
-            id: "page.setting.general.link-keplr-mobile.enter-password-view.password-label",
+            id: "page.setting.general.link-deepwallet-mobile.enter-password-view.password-label",
           })}
           type="password"
           value={password}
@@ -283,11 +283,11 @@ const QRCodeView: FunctionComponent<{
         .confirm(
           "",
           intl.formatMessage({
-            id: "page.setting.general.link-keplr-mobile.qr-code-view.session-expired",
+            id: "page.setting.general.link-deepwallet-mobile.qr-code-view.session-expired",
           }),
           {
             forceYes: true,
-            yesText: "Ok",
+            yesText: "OK",
           }
         )
         .then(() => {
@@ -490,7 +490,7 @@ const QRCodeView: FunctionComponent<{
         <Box padding="1.5rem">
           <YAxis alignX="center">
             <Styles.Paragraph>
-              <FormattedMessage id="page.setting.general.link-keplr-mobile.qr-code-view.paragraph" />
+              <FormattedMessage id="page.setting.general.link-deepwallet-mobile.qr-code-view.paragraph" />
             </Styles.Paragraph>
             <Gutter size="3.375rem" direction="vertical" />
             <Box
@@ -502,7 +502,7 @@ const QRCodeView: FunctionComponent<{
                 value={(() => {
                   if (isExpired) {
                     return intl.formatMessage({
-                      id: "page.setting.general.link-keplr-mobile.qr-code-view.expired",
+                      id: "page.setting.general.link-deepwallet-mobile.qr-code-view.expired",
                     });
                   }
 

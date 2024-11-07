@@ -240,13 +240,7 @@ export const UnlockPage: FunctionComponent = observer(() => {
         <Box alignX="center">
           <Gutter size="6rem" />
 
-          <div
-            ref={animContainerRef}
-            style={{
-              width: "12rem",
-              height: "9.5rem",
-            }}
-          />
+          <img src={require("../../public/assets/img/intro.svg")} />
         </Box>
 
         <ParagraphSection

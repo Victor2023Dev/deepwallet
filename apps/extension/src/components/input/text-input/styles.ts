@@ -93,7 +93,7 @@ export const Styles = {
             ::after {
               border-color: ${(props) =>
                 props.theme.mode === "light"
-                  ? ColorPalette["blue-400"]
+                  ? ColorPalette["shentu-400"]
                   : ColorPalette["gray-200"]};
             }
           `;

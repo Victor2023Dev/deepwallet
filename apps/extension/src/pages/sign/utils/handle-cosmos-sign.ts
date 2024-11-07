@@ -121,7 +121,7 @@ export const handleCosmosPreSign = async (
     case "keystone": {
       const keystoneOptions = options as KeystoneOptions;
       const keystoneSDK = new KeystoneSDK({
-        origin: "Keplr Extension",
+        origin: "DeepWallet Extension",
       });
       const address = interactionData.data.signer;
       const path = getPathFromPubKey(

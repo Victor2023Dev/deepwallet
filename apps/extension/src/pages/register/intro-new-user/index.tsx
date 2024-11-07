@@ -15,8 +15,8 @@ import { Gutter } from "../../../components/gutter";
 import { useRegisterHeader } from "../components/header";
 import { RegisterH4 } from "../components/typography";
 import { TextButton } from "../../../components/button-text";
-import { GoogleIcon, KeyIcon } from "../../../components/icon";
-import * as KeplrWalletPrivate from "keplr-wallet-private";
+import { KeyIcon } from "../../../components/icon";
+// import * as KeplrWalletPrivate from "keplr-wallet-private";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useTheme } from "styled-components";
 
@@ -42,7 +42,7 @@ export const RegisterIntroNewUserScene: FunctionComponent = () => {
 
   return (
     <RegisterSceneBox>
-      <Columns sum={2} gutter="2.5rem">
+      <Columns sum={1}>
         <Column weight={1}>
           <Box minHeight="15.625rem">
             <RegisterH4
@@ -57,7 +57,7 @@ export const RegisterIntroNewUserScene: FunctionComponent = () => {
 
             <Gutter size="0.5rem" />
 
-            <Subtitle3 color={ColorPalette["gray-200"]}>
+            <Subtitle3 color="#807567">
               <FormattedMessage id="pages.register.intro-new-user.recovery-path-paragraph" />
             </Subtitle3>
 
@@ -72,7 +72,7 @@ export const RegisterIntroNewUserScene: FunctionComponent = () => {
                   <KeyIcon
                     width="1rem"
                     height="1rem"
-                    color={ColorPalette["gray-10"]}
+                    color={"black"}
                   />
                 }
                 size="large"
@@ -106,15 +106,15 @@ export const RegisterIntroNewUserScene: FunctionComponent = () => {
             </Columns>
           </Box>
         </Column>
-        <Box
+        {/* <Box
           width="1px"
           backgroundColor={
             theme.mode === "light"
               ? ColorPalette["gray-100"]
               : ColorPalette["gray-400"]
           }
-        />
-        <Column weight={1}>
+        /> */}
+        {/* <Column weight={1}>
           <Box height="100%">
             <RegisterH4
               color={
@@ -167,7 +167,7 @@ export const RegisterIntroNewUserScene: FunctionComponent = () => {
               </Caption1>
             </Columns>
           </Box>
-        </Column>
+        </Column> */}
       </Columns>
     </RegisterSceneBox>
   );
@@ -190,21 +190,21 @@ const ShieldIcon: FunctionComponent = () => {
   );
 };
 
-const BoltIcon: FunctionComponent = () => {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.74348 1.0633C9.94431 1.17526 10.0429 1.40975 9.98239 1.63158L8.65464 6.50002H13.5C13.6991 6.50002 13.8792 6.61814 13.9586 6.80074C14.0379 6.98335 14.0014 7.19562 13.8655 7.34118L6.86554 14.8412C6.70866 15.0093 6.45736 15.0487 6.25654 14.9367C6.05571 14.8248 5.95713 14.5903 6.01763 14.3685L7.34539 9.50002H2.50001C2.30091 9.50002 2.12079 9.38189 2.04144 9.19929C1.96209 9.01669 1.99863 8.80441 2.13448 8.65886L9.13448 1.15886C9.29137 0.990769 9.54266 0.951339 9.74348 1.0633Z"
-        fill="#ABABB5"
-      />
-    </svg>
-  );
-};
+// const BoltIcon: FunctionComponent = () => {
+//   return (
+//     <svg
+//       width="16"
+//       height="16"
+//       viewBox="0 0 16 16"
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//     >
+//       <path
+//         fillRule="evenodd"
+//         clipRule="evenodd"
+//         d="M9.74348 1.0633C9.94431 1.17526 10.0429 1.40975 9.98239 1.63158L8.65464 6.50002H13.5C13.6991 6.50002 13.8792 6.61814 13.9586 6.80074C14.0379 6.98335 14.0014 7.19562 13.8655 7.34118L6.86554 14.8412C6.70866 15.0093 6.45736 15.0487 6.25654 14.9367C6.05571 14.8248 5.95713 14.5903 6.01763 14.3685L7.34539 9.50002H2.50001C2.30091 9.50002 2.12079 9.38189 2.04144 9.19929C1.96209 9.01669 1.99863 8.80441 2.13448 8.65886L9.13448 1.15886C9.29137 0.990769 9.54266 0.951339 9.74348 1.0633Z"
+//         fill="#ABABB5"
+//       />
+//     </svg>
+//   );
+// };

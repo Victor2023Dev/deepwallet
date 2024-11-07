@@ -125,6 +125,7 @@ export const NewMnemonicScene: FunctionComponent = observer(() => {
         ) : null}
         <Box alignX="center">
           <HorizontalRadioGroup
+            style={{ background: "#FFDEAC" }}
             size="large"
             selectedKey={wordsType}
             onSelect={(key) => {

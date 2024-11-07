@@ -38,7 +38,7 @@ export const CollapsibleList: FunctionComponent<CollapsibleListProps> = ({
   hideNumInTitle,
   notRenderHiddenItems,
   altViewMoreIntlTextId,
-  onCollapse,
+  // onCollapse,
 }) => {
   if (!lenAlwaysShown || lenAlwaysShown < 0) {
     lenAlwaysShown = items.length;
@@ -69,7 +69,7 @@ export const CollapsibleList: FunctionComponent<CollapsibleListProps> = ({
             style={{
               color:
                 theme.mode === "light"
-                  ? ColorPalette["blue-400"]
+                  ? ColorPalette["shentu-400"]
                   : ColorPalette["gray-50"],
             }}
           >
@@ -108,9 +108,6 @@ export const CollapsibleList: FunctionComponent<CollapsibleListProps> = ({
             e.preventDefault();
 
             setIsCollapsed(!isCollapsed);
-            if (onCollapse) {
-              onCollapse(!isCollapsed);
-            }
             if (!isCollapsed) {
               setNotRenderHiddenItemsIsClosing(true);
             }

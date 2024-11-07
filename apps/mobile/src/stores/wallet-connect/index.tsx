@@ -877,7 +877,7 @@ export class WalletConnectStore {
           throw new Error('Unknown request method');
       }
 
-      // Keplr asks permission to user according to requests.
+      // DeepWallet asks permission to user according to requests.
       // It is possible that new permission added to session after requests.
       // If changes exists, try to update session and emit event.
       const newPermittedChains =

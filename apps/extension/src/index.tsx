@@ -92,21 +92,19 @@ import {
   BottomTabHomeIcon,
   BottomTabSettingIcon,
   BottomTabsRouteProvider,
-  BottomTabSwapIcon,
+  // BottomTabSwapIcon,
 } from "./bottom-tabs";
 import { IBCSwapDestinationSelectAssetPage } from "./pages/ibc-swap/select-asset";
 import { RoutePageAnalytics } from "./route-page-analytics";
 import { useIntl } from "react-intl";
 import { ActivitiesPage } from "./pages/activities";
 import { isRunningInSidePanel } from "./utils";
-import { StarknetSendPage } from "./pages/starknet/send";
-import { SignStarknetTxPage } from "./pages/starknet/sign/tx";
 
 configure({
   enforceActions: "always", // Make mobx to strict mode.
 });
 
-window.keplr = new Keplr(
+window.deepwallet = new Keplr(
   manifest.version,
   "core",
   new InExtensionMessageRequester()
@@ -340,13 +338,13 @@ const RoutesAfterReady: FunctionComponent = observer(() => {
               id: "bottom-tabs.home",
             }),
           },
-          {
-            pathname: "/ibc-swap",
-            icon: <BottomTabSwapIcon width="1.75rem" height="1.75rem" />,
-            text: intl.formatMessage({
-              id: "bottom-tabs.swap",
-            }),
-          },
+          // {
+          //   pathname: "/ibc-swap",
+          //   icon: <BottomTabSwapIcon width="1.75rem" height="1.75rem" />,
+          //   text: intl.formatMessage({
+          //     id: "bottom-tabs.swap",
+          //   }),
+          // },
           {
             pathname: "/activities",
             icon: <BottomTabActivityIcon width="1.75rem" height="1.75rem" />,
@@ -376,7 +374,6 @@ const RoutesAfterReady: FunctionComponent = observer(() => {
                 element={<MainPage setIsNotReady={setMainPageIsNotReady} />}
               />
               <Route path="/send" element={<SendAmountPage />} />
-              <Route path="/starknet/send" element={<StarknetSendPage />} />
               <Route path="/ibc-swap" element={<IBCSwapPage />} />
               <Route
                 path="/send/select-asset"
@@ -468,10 +465,6 @@ const RoutesAfterReady: FunctionComponent = observer(() => {
                 element={<SignCosmosICNSPage />}
               />
               <Route path="/sign-ethereum" element={<SignEthereumTxPage />} />
-              <Route
-                path="/sign-starknet-tx"
-                element={<SignStarknetTxPage />}
-              />
               <Route path="/wallet/select" element={<WalletSelectPage />} />
               <Route path="/wallet/delete" element={<WalletDeletePage />} />
               <Route

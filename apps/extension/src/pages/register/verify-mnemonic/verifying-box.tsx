@@ -11,7 +11,7 @@ import {
 } from "../../../components/input";
 import { XAxis, YAxis } from "../../../components/axis";
 import { ColorPalette } from "../../../styles";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { Gutter } from "../../../components/gutter";
 import { useSceneEvents } from "../../../components/transition";
 import { FormattedMessage } from "react-intl";
@@ -53,7 +53,6 @@ export const VerifyingMnemonicBox = forwardRef<
     }[];
   }
 >(({ words }, ref) => {
-  const theme = useTheme();
   const firstInputRef = useRef<HTMLInputElement | null>(null);
   useSceneEvents({
     onDidVisible: () => {
@@ -84,11 +83,7 @@ export const VerifyingMnemonicBox = forwardRef<
   return (
     <Box
       paddingY="1.5rem"
-      backgroundColor={
-        theme.mode === "light"
-          ? ColorPalette["gray-50"]
-          : ColorPalette["gray-500"]
-      }
+      backgroundColor="#F4F3F2"
       borderRadius="0.5rem"
     >
       <YAxis alignX="center">
@@ -97,7 +92,7 @@ export const VerifyingMnemonicBox = forwardRef<
             return (
               <React.Fragment key={word.index}>
                 <XAxis alignY="center">
-                  <Styles.IndexText>
+                  <Styles.IndexText style={{ color: "#201B13" }}>
                     <FormattedMessage
                       id="pages.register.verify-mnemonic.verifying-box.word"
                       values={{ index: word.index + 1 }}

@@ -49,7 +49,7 @@ import {
 } from "starknet";
 
 export interface ProxyRequest {
-  type: "proxy-request";
+  type: "deepwallet-proxy-request" | "proxy-request";
   id: string;
   method: keyof (Keplr & KeplrCoreTypes);
   args: any[];
@@ -76,12 +76,13 @@ function defineUnwritablePropertyIfPossible(o: any, p: string, value: any) {
     }
   } else {
     console.warn(
-      `Failed to inject ${p} from keplr. Probably, other wallet is trying to intercept Keplr`
+      `Failed to inject ${p} from deepwallet. Probably, other wallet is trying to intercept DeepWallet`
     );
   }
 }
 
 export function injectKeplrToWindow(keplr: IKeplr): void {
+  defineUnwritablePropertyIfPossible(window, "deepwallet", keplr);
   defineUnwritablePropertyIfPossible(window, "keplr", keplr);
   defineUnwritablePropertyIfPossible(
     window,
@@ -134,7 +135,11 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       const message: ProxyRequest = parseMessage
         ? parseMessage(e.data)
         : e.data;
-      if (!message || message.type !== "proxy-request") {
+      if (
+        !message ||
+        (message.type !== "deepwallet-proxy-request" &&
+          message.type !== "proxy-request")
+      ) {
         return;
       }
 
@@ -444,8 +449,8 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       })
       .join("");
 
-    const proxyMessage: ProxyRequest = {
-      type: "proxy-request",
+    const deepwalletProxyMessage: ProxyRequest = {
+      type: "deepwallet-proxy-request",
       id,
       method,
       args: JSONUint8Array.wrap(args),
@@ -484,7 +489,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
 
       this.eventListener.addMessageListener(receiveResponse);
 
-      this.eventListener.postMessage(proxyMessage);
+      this.eventListener.postMessage(deepwalletProxyMessage);
     });
   }
 
@@ -583,7 +588,7 @@ export class InjectedKeplr implements IKeplr, KeplrCoreTypes {
       chainInfo.features?.includes("no-legacy-stdTx")
     ) {
       console.warn(
-        "“stargate”, “no-legacy-stdTx” feature has been deprecated. The launchpad is no longer supported, thus works without the two features. We would keep the aforementioned two feature for a while, but the upcoming update would potentially cause errors. Remove the two feature."
+        `"stargate", "no-legacy-stdTx" feature has been deprecated. The launchpad is no longer supported, thus works without the two features. We would keep the aforementioned two feature for a while, but the upcoming update would potentially cause errors. Remove the two feature.`
       );
     }
 
@@ -1148,8 +1153,8 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
       })
       .join("");
 
-    const proxyMessage: ProxyRequest = {
-      type: "proxy-request",
+    const deepwalletProxyMessage: ProxyRequest = {
+      type: "deepwallet-proxy-request",
       id,
       method: "ethereum",
       args: JSONUint8Array.wrap(args),
@@ -1198,7 +1203,7 @@ class EthereumProvider extends EventEmitter implements IEthereumProvider {
 
       this.eventListener.addMessageListener(receiveResponse);
 
-      this.eventListener.postMessage(proxyMessage);
+      this.eventListener.postMessage(deepwalletProxyMessage);
     });
   };
 

@@ -140,7 +140,7 @@ export class ObservableSecretContractChainQuery<
       | undefined;
 
     if (!this.keplr) {
-      throw new Error("Keplr API not initialized");
+      throw new Error("DeepWallet API not initialized");
     }
 
     if (!this.nonce) {

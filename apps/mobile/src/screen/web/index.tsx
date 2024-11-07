@@ -132,7 +132,7 @@ export const WebScreen: FunctionComponent = observer(() => {
           style={style.flatten([
             'subtitle2',
             'margin-right-4',
-            'color-blue-400',
+            'color-shentu-400',
           ])}>
           {webpageStore.favoriteUrls.length}
         </Text>
@@ -161,7 +161,7 @@ export const WebScreen: FunctionComponent = observer(() => {
               <Box marginRight={16}>
                 <StarIcon
                   size={20}
-                  color={style.flatten(['color-blue-300']).color}
+                  color={style.flatten(['color-shentu-300']).color}
                 />
               </Box>
               <Text

@@ -55,7 +55,7 @@ export const Styles = {
               : ColorPalette["gray-600"]};
           color: ${(props) =>
             props.theme.mode === "light"
-              ? ColorPalette["blue-400"]
+              ? ColorPalette["shentu-400"]
               : ColorPalette["gray-50"]};
           font-weight: 500;
         `;

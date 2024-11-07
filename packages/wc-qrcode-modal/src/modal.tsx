@@ -57,7 +57,7 @@ export const Modal: FunctionComponent<{
       if (checkAndroid) {
         // Save the mobile link.
         saveMobileLinkInfo({
-          name: "Keplr",
+          name: "DeepWallet",
           href: "intent://wcV2#Intent;package=com.chainapsis.keplr;scheme=keplrwallet;end;",
         });
 
@@ -65,7 +65,7 @@ export const Modal: FunctionComponent<{
       } else {
         // Save the mobile link.
         saveMobileLinkInfo({
-          name: "Keplr",
+          name: "DeepWallet",
           href: `keplrwallet://wcV2`,
         });
 

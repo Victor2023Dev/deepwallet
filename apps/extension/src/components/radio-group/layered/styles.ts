@@ -86,11 +86,11 @@ export const LayeredStyles = {
           cursor: auto;
           background-color: ${(props) =>
             props.theme.mode === "light"
-              ? ColorPalette["blue-50"]
+              ? ColorPalette["shentu-50"]
               : ColorPalette["gray-400"]};
           color: ${(props) =>
             props.theme.mode === "light"
-              ? ColorPalette["blue-400"]
+              ? ColorPalette["shentu-400"]
               : ColorPalette.white};
           font-weight: 500;
         `;

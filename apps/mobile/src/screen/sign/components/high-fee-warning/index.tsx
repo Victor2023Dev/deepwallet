@@ -22,7 +22,7 @@ export const HighFeeWarning: FunctionComponent<{
         'border-radius-8',
         'background-color-gray-500',
         'border-width-1',
-        checked ? 'border-color-gray-500' : 'border-color-blue-400',
+        checked ? 'border-color-gray-500' : 'border-color-shentu-400',
       ])}
       rippleColor={style.get('color-gray-550').color}
       underlayColor={style.get('color-gray-550').color}

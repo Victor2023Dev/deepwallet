@@ -176,7 +176,7 @@ export const StakedTabView: FunctionComponent<{
               }
               onClick={async () => {
                 await browser.tabs.create({
-                  url: "https://wallet.keplr.app/?modal=staking",
+                  url: "https://explorer.shentu.org/validators",
                 });
 
                 close();

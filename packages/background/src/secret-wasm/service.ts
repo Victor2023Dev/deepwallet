@@ -96,8 +96,8 @@ export class SecretWasmService {
   ): Promise<Uint8Array> {
     const chainInfo = await this.chainsService.getChainInfoOrThrow(chainId);
 
-    // XXX: Keplr should generate the seed deterministically according to the account.
-    // Otherwise, it will lost the encryption/decryption key if Keplr is uninstalled or local storage is cleared.
+    // XXX: DeepWallet should generate the seed deterministically according to the account.
+    // Otherwise, it will lost the encryption/decryption key if DeepWallet is uninstalled or local storage is cleared.
     // For now, use the signature of some string to generate the seed.
     // It need to more research.
     const seed = await this.getSeed(chainInfo);
@@ -114,8 +114,8 @@ export class SecretWasmService {
   ): Promise<Uint8Array> {
     const chainInfo = await this.chainsService.getChainInfoOrThrow(chainId);
 
-    // XXX: Keplr should generate the seed deterministically according to the account.
-    // Otherwise, it will lost the encryption/decryption key if Keplr is uninstalled or local storage is cleared.
+    // XXX: DeepWallet should generate the seed deterministically according to the account.
+    // Otherwise, it will lost the encryption/decryption key if DeepWallet is uninstalled or local storage is cleared.
     // For now, use the signature of some string to generate the seed.
     // It need to more research.
     const seed = await this.getSeed(chainInfo);
@@ -174,7 +174,7 @@ export class SecretWasmService {
       return Hash.sha256(
         await this.keyRingCosmosService.legacySignArbitraryInternal(
           chainInfo.chainId,
-          "Create Keplr Secret encryption key. Only approve requests by Keplr."
+          "Create DeepWallet Secret encryption key. Only approve requests by DeepWallet."
         )
       );
     })();

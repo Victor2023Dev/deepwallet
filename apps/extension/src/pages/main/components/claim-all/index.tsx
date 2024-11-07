@@ -58,7 +58,7 @@ const Styles = {
     padding: 0.75rem 0 0 0;
     border-radius: 0.375rem;
   `,
-  ExpandButton: styled(Box)<{ viewTokenCount: number }>`
+  ExpandButton: styled(Box) <{ viewTokenCount: number }>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,16 +79,16 @@ const Styles = {
       return css`
         :hover {
           background-color: ${(props) =>
-            props.theme.mode === "light"
-              ? ColorPalette["gray-10"]
-              : Color(ColorPalette["gray-600"]).alpha(0.5).toString()};
+          props.theme.mode === "light"
+            ? ColorPalette["gray-10"]
+            : Color(ColorPalette["gray-600"]).alpha(0.5).toString()};
         }
 
         :active {
           background-color: ${(props) =>
-            props.theme.mode === "light"
-              ? ColorPalette["gray-50"]
-              : ColorPalette["gray-500"]};
+          props.theme.mode === "light"
+            ? ColorPalette["gray-50"]
+            : ColorPalette["gray-500"]};
         }
       `;
     }};
@@ -291,10 +291,10 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
           let feeCurrency = chainInfo.hasFeature("feemarket")
             ? undefined
             : chainInfo.feeCurrencies.find(
-                (cur) =>
-                  cur.coinMinimalDenom ===
-                  chainInfo.stakeCurrency?.coinMinimalDenom
-              );
+              (cur: any) =>
+                cur.coinMinimalDenom ===
+                chainInfo.stakeCurrency?.coinMinimalDenom
+            );
 
           if (chainInfo.hasFeature("osmosis-base-fee-beta") && feeCurrency) {
             const queryBaseFee = queriesStore.get(chainInfo.chainId).osmosis
@@ -315,28 +315,28 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
             if (baseFee) {
               const low = remoteBaseFeeStep?.data.low
                 ? parseFloat(
-                    baseFee.mul(new Dec(remoteBaseFeeStep.data.low)).toString(8)
-                  )
+                  baseFee.mul(new Dec(remoteBaseFeeStep.data.low)).toString(8)
+                )
                 : feeCurrency.gasPriceStep?.low ?? DefaultGasPriceStep.low;
               const average = Math.max(
                 low,
                 remoteBaseFeeStep?.data.average
                   ? parseFloat(
-                      baseFee
-                        .mul(new Dec(remoteBaseFeeStep.data.average))
-                        .toString(8)
-                    )
+                    baseFee
+                      .mul(new Dec(remoteBaseFeeStep.data.average))
+                      .toString(8)
+                  )
                   : feeCurrency.gasPriceStep?.average ??
-                      DefaultGasPriceStep.average
+                  DefaultGasPriceStep.average
               );
               const high = Math.max(
                 average,
                 remoteBaseFeeStep?.data.high
                   ? parseFloat(
-                      baseFee
-                        .mul(new Dec(remoteBaseFeeStep.data.high))
-                        .toString(8)
-                    )
+                    baseFee
+                      .mul(new Dec(remoteBaseFeeStep.data.high))
+                      .toString(8)
+                  )
                   : feeCurrency.gasPriceStep?.high ?? DefaultGasPriceStep.high
               );
 
@@ -354,9 +354,9 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
           if (!feeCurrency) {
             let prev:
               | {
-                  balance: CoinPretty;
-                  price: PricePretty | undefined;
-                }
+                balance: CoinPretty;
+                price: PricePretty | undefined;
+              }
               | undefined;
 
             const feeCurrencies = await (async () => {
@@ -381,12 +381,12 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
                     const multificationConfig =
                       queriesStore.simpleQuery.queryGet<{
                         [str: string]:
-                          | {
-                              low: number;
-                              average: number;
-                              high: number;
-                            }
-                          | undefined;
+                        | {
+                          low: number;
+                          average: number;
+                          high: number;
+                        }
+                        | undefined;
                       }>(
                         "https://gjsttg7mkgtqhjpt3mv5aeuszi0zblbb.lambda-url.us-west-2.on.aws",
                         "/feemarket/info.json"
@@ -412,7 +412,7 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
                       }
                       const specific =
                         multificationConfig.response.data[
-                          chainInfo.chainIdentifier
+                        chainInfo.chainIdentifier
                         ];
                       if (
                         specific &&
@@ -634,10 +634,8 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
                 })())
               ) {
                 console.log(
-                  `(${chainId}) Skip claim rewards. Fee: ${fee.amount}${
-                    fee.denom
-                  } is greater than stakable reward: ${
-                    viewToken.token.toCoin().amount
+                  `(${chainId}) Skip claim rewards. Fee: ${fee.amount}${fee.denom
+                  } is greater than stakable reward: ${viewToken.token.toCoin().amount
                   }${viewToken.token.toCoin().denom}`
                 );
                 state.setFailedReason(
@@ -789,7 +787,7 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
             <Stack gutter="0.5rem">
               <YAxis alignX="left">
                 <Skeleton layer={1} isNotReady={isNotReady}>
-                  <Body2 style={{ color: ColorPalette["gray-300"] }}>
+                  <Body2 style={{ color: "#807567" }}>
                     <FormattedMessage id="page.main.components.claim-all.title" />
                   </Body2>
                 </Skeleton>
@@ -827,6 +825,8 @@ export const ClaimAll: FunctionComponent<{ isNotReady?: boolean }> = observer(
                */}
               {isLedger || isKeystone ? (
                 <Button
+                  buttonStyle={{ color: "#201B13", background: "#FBBC49" }}
+                  textColor="#201B13 !important"
                   text={intl.formatMessage({
                     id: "page.main.components.claim-all.button",
                   })}
@@ -1037,7 +1037,7 @@ const ClaimTokenItem: FunctionComponent<{
 
   const isLoading =
     accountStore.getAccount(viewToken.chainInfo.chainId).isSendingMsg ===
-      "withdrawRewards" ||
+    "withdrawRewards" ||
     state.isLoading ||
     isSimulating;
 
