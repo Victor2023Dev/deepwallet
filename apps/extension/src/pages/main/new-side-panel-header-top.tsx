@@ -67,7 +67,7 @@ export const NewSidePanelHeaderTop: FunctionComponent<{
               textDecoration: "underline",
             }}
           >
-            Wanna keep Keplr by your side?
+            Wanna keep DeepWallet by your side?
           </Subtitle4>
         </XAxis>
       </Box>

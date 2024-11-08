@@ -1,6 +1,6 @@
 {
   "name": "keplr",
-  "description": "Keplr is a browser extension wallet for the Inter blockchain ecosystem.",
+  "description": "DeepWallet is a browser extension wallet for the Inter blockchain ecosystem.",
   "private": true,
   "workspaces": {
     "packages": [

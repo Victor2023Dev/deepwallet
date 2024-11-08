@@ -44,7 +44,7 @@ export class KeyRingLedgerService {
   ): PubKeySecp256k1 {
     if ("starknet" in modularChainInfo) {
       throw new Error(
-        "Ledger support is not provided for this chain on Keplr yet"
+        "Ledger support is not provided for this chain on DeepWallet yet"
       );
     }
     if (!("cosmos" in modularChainInfo)) {

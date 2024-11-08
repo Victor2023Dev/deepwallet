@@ -72,7 +72,7 @@ export const PermissionBasicAccessForEVMPage: FunctionComponent<{
       <Box height="100%" padding="0.75rem" paddingBottom="0">
         <Box alignX="center">
           <Image
-            alt="Keplr Logo Image"
+            alt="DeepWallet Logo Image"
             src={require("../../../public/assets/logo-256.png")}
             style={{ width: "4.625rem", height: "4.625rem" }}
           />

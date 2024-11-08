@@ -222,7 +222,7 @@ export class SecretAccountImpl {
       async () => {
         const keplr = await this.base.getKeplr();
         if (!keplr) {
-          throw new Error("Can't get the Keplr API");
+          throw new Error("Can't get the DeepWallet API");
         }
 
         const enigmaUtils = keplr.getEnigmaUtils(this.chainId);
@@ -325,7 +325,7 @@ export class SecretAccountImpl {
       async () => {
         const keplr = await this.base.getKeplr();
         if (!keplr) {
-          throw new Error("Can't get the Keplr API");
+          throw new Error("Can't get the DeepWallet API");
         }
 
         const enigmaUtils = keplr.getEnigmaUtils(this.chainId);

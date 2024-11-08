@@ -70,7 +70,7 @@ export class StoreAccount extends Account {
 
     const keplr = await this.getKeplr();
     if (!keplr) {
-      throw new Error("Keplr is not initialized");
+      throw new Error("DeepWallet is not initialized");
     }
     const { transaction: newTransaction, signature } =
       await keplr.signStarknetDeployAccountTransaction(this.keplrChainId, {
@@ -190,7 +190,7 @@ export class StoreAccount extends Account {
 
     const keplr = await this.getKeplr();
     if (!keplr) {
-      throw new Error("Keplr is not initialized");
+      throw new Error("DeepWallet is not initialized");
     }
     const { transaction: newTransaction, signature } =
       await keplr.signStarknetDeployAccountTransaction(
@@ -254,7 +254,7 @@ export class StoreAccount extends Account {
 
     const keplr = await this.getKeplr();
     if (!keplr) {
-      throw new Error("Keplr is not initialized");
+      throw new Error("DeepWallet is not initialized");
     }
     const {
       transactions: newTransactions,
@@ -334,7 +334,7 @@ export class StoreAccount extends Account {
 
     const keplr = await this.getKeplr();
     if (!keplr) {
-      throw new Error("Keplr is not initialized");
+      throw new Error("DeepWallet is not initialized");
     }
     const {
       transactions: newTransactions,

@@ -1,22 +1,13 @@
-# Keplr Wallet
+# Introduction
+DeepWallet is a Web3 wallet app based on Keplr.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Twitter: Keplr Wallet](https://img.shields.io/twitter/follow/keplrwallet.svg?style=social)](https://twitter.com/keplrwallet)
 
 > The most powerful wallet for the Cosmos ecosystem and the Interchain.
 
 ## Official Releases
 
-> NOTE: We do not accept native integrations to the official releases through pull requests. Please feel free to check out [Keplr Chain Registry repo](https://github.com/chainapsis/keplr-chain-registry) for permissionless integrations with your chain.
-
-You can find the latest versions of the official managed releases on these links:
-
-- [Browser Extension](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)
-  - Keplr officially supports Chrome, Firefox.
-- [iOS App](https://apps.apple.com/us/app/keplr-wallet/id1567851089)
-- [Android App](https://play.google.com/store/apps/details?id=com.chainapsis.keplr)
-
-For help using Keplr Wallet, Visit our [User Support Site](https://help.keplr.app/).
+> NOTE: We do not accept native integrations to the official releases through pull requests. Please feel free to check out [DeepWallet Chain Registry repo](https://github.com/shentufoundation/deepwallet) for permissionless integrations with your chain.
 
 ## Building browser extension locally
 
@@ -40,7 +31,7 @@ Clone this repo and run:
 yarn && yarn build
 ```
 
-You can find the build output of Keplr Extension in apps/extension/build/manifest-v3. This output only works on Chrome now, so we recommend using other build outputs (in apps/extension/build/manifest-v2 or apps/extension/build/firefox) for other browsers. You can visit [this page](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked) for instructions on loading the build output on Chrome.
+You can find the build output of DeepWallet Extension in apps/extension/build/manifest-v3. This output only works on Chrome now, so we recommend using other build outputs (in apps/extension/build/manifest-v2 or apps/extension/build/firefox) for other browsers. You can visit [this page](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked) for instructions on loading the build output on Chrome.
 
 ## Building mobile app locally
 
@@ -62,7 +53,9 @@ WIP
 
 ## Dapp example
 
-Refer to the [Keplr Example repository](https://github.com/chainapsis/keplr-example) for examples of how to integrate Keplr signing support for your web interface/application.
+Since DeepWallet is based on Keplr wallet, you could refer to the [DeepWallet Example repository](https://github.com/chainapsis/keplr-example) for examples of how to integrate DeepWallet signing support for your web interface/application.
+
+DeepWallet inject both `keplr` and `deepwallet` in `window`. Thus, if you only want to invoke deepwallet, you could call functions by `window.deepwallet`. Otherwise, you could call `keplr`.
 
 ## Disclaimer
 
@@ -81,4 +74,4 @@ Apache 2.0
 
 ### iOS / Android App
 
-Copyright (c) 2021 Chainapsis Inc. All rights reserved.
+Copyright (c) 2024 Shentu Inc. All rights reserved.

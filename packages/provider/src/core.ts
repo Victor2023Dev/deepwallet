@@ -1376,8 +1376,8 @@ export class Keplr implements IKeplr, KeplrCoreTypes {
               mainText.style.fontSize = "1rem";
               mainText.style.color = isLightMode ? "#020202" : "#FEFEFE";
               mainText.textContent = isKeplrLocked
-                ? "Unlock Keplr to proceed"
-                : "Open Keplr to approve request(s)";
+                ? "Unlock DeepWallet to proceed"
+                : "Open DeepWallet to approve request(s)";
 
               // const arrowLeftOpenWrapper = document.createElement("div");
               // arrowLeftOpenWrapper.style.boxSizing = "border-box";
