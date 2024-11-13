@@ -6,13 +6,13 @@ import { Box } from "../../../components/box";
 import { PageButton } from "../components";
 import { RightArrowIcon } from "../../../components/icon";
 import { Stack } from "../../../components/stack";
-import { Toggle } from "../../../components/toggle";
-import { useStore } from "../../../stores";
+// import { Toggle } from "../../../components/toggle";
+// import { useStore } from "../../../stores";
 import { useNavigate } from "react-router";
 import { useIntl } from "react-intl";
 
 export const SettingAdvancedPage: FunctionComponent = observer(() => {
-  const { uiConfigStore } = useStore();
+  // const { uiConfigStore } = useStore();
   const intl = useIntl();
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const SettingAdvancedPage: FunctionComponent = observer(() => {
     >
       <Box padding="0.75rem" paddingTop="0">
         <Stack gutter="0.5rem">
-          <PageButton
+          {/* <PageButton
             title={intl.formatMessage({
               id: "page.setting.advanced.developer-mode-title",
             })}
@@ -39,7 +39,7 @@ export const SettingAdvancedPage: FunctionComponent = observer(() => {
                 }
               />
             }
-          />
+          /> */}
 
           <PageButton
             title={intl.formatMessage({

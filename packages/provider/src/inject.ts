@@ -81,31 +81,31 @@ function defineUnwritablePropertyIfPossible(o: any, p: string, value: any) {
   }
 }
 
-export function injectKeplrToWindow(keplr: IKeplr): void {
-  defineUnwritablePropertyIfPossible(window, "deepwallet", keplr);
-  defineUnwritablePropertyIfPossible(window, "keplr", keplr);
+export function injectDeepWalletToWindow(deepwallet: IKeplr): void {
+  defineUnwritablePropertyIfPossible(window, "deepwallet", deepwallet);
+  defineUnwritablePropertyIfPossible(window, "keplr", deepwallet);
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSigner",
-    keplr.getOfflineSigner
+    deepwallet.getOfflineSigner
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSignerOnlyAmino",
-    keplr.getOfflineSignerOnlyAmino
+    deepwallet.getOfflineSignerOnlyAmino
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getOfflineSignerAuto",
-    keplr.getOfflineSignerAuto
+    deepwallet.getOfflineSignerAuto
   );
   defineUnwritablePropertyIfPossible(
     window,
     "getEnigmaUtils",
-    keplr.getEnigmaUtils
+    deepwallet.getEnigmaUtils
   );
 
-  defineUnwritablePropertyIfPossible(window, "starknet_keplr", keplr.starknet);
+  defineUnwritablePropertyIfPossible(window, "starknet_keplr", deepwallet.starknet);
 }
 
 /**

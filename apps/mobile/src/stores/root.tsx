@@ -1,4 +1,4 @@
-import {APR_API_URL, CommunityChainInfoRepo, EmbedChainInfos} from '../config';
+import { APR_API_URL, CommunityChainInfoRepo, EmbedChainInfos } from '../config';
 
 import {
   AccountStore,
@@ -18,7 +18,7 @@ import {
   CosmwasmAccount,
   TokenFactoryCurrencyRegistrar,
 } from '@keplr-wallet/stores';
-import {IBCChannelStore, IBCCurrencyRegistrar} from '@keplr-wallet/stores-ibc';
+import { IBCChannelStore, IBCCurrencyRegistrar } from '@keplr-wallet/stores-ibc';
 import {
   ChainSuggestStore,
   InteractionStore,
@@ -29,14 +29,14 @@ import {
   SignInteractionStore,
   TokensStore,
 } from '@keplr-wallet/stores-core';
-import {AsyncKVStore} from '../common';
-import {RNEnv, RNRouterUI, RNMessageRequesterInternal} from '../router';
-import {APP_PORT} from '@keplr-wallet/router';
+import { AsyncKVStore } from '../common';
+import { RNEnv, RNRouterUI, RNMessageRequesterInternal } from '../router';
+import { APP_PORT } from '@keplr-wallet/router';
 import EventEmitter from 'eventemitter3';
-import {HugeQueriesStore} from './huge-queries';
-import {ChainStore} from './chain';
-import {FiatCurrency} from '@keplr-wallet/types';
-import {UIConfigStore} from './ui-config';
+import { HugeQueriesStore } from './huge-queries';
+import { ChainStore } from './chain';
+import { FiatCurrency } from '@keplr-wallet/types';
+import { UIConfigStore } from './ui-config';
 import {
   ICNSInfo,
   CoinGeckoAPIEndPoint,
@@ -45,14 +45,15 @@ import {
   TokenContractListURL,
   EthereumEndpoint,
   SwapVenue,
+  CoinGeckoCoinDataByTokenAddress,
 } from '../config.ui';
-import {TokenContractsQueries} from './token-contracts';
-import {AprQueries} from './aprs';
-import {CosmosGovernanceQueries} from './governance/quries';
-import {CosmosGovernanceQueriesV1} from './governance/v1/quries';
-import {ScamProposalStore} from './scam-proposal';
-import {KeychainStore} from './keychain';
-import {WalletConnectStore} from './wallet-connect';
+import { TokenContractsQueries } from './token-contracts';
+import { AprQueries } from './aprs';
+import { CosmosGovernanceQueries } from './governance/quries';
+import { CosmosGovernanceQueriesV1 } from './governance/v1/quries';
+import { ScamProposalStore } from './scam-proposal';
+import { KeychainStore } from './keychain';
+import { WalletConnectStore } from './wallet-connect';
 import {
   AxelarEVMBridgeCurrencyRegistrar,
   GravityBridgeCurrencyRegistrar,
@@ -63,9 +64,9 @@ import {
   SwapUsageQueries,
   Price24HChangesStore,
 } from '@keplr-wallet/stores-internal';
-import {DeepLinkStore} from './deep-link';
-import {EthereumQueries, EthereumAccountStore} from '@keplr-wallet/stores-eth';
-import {WebpageStore} from './webpage';
+import { DeepLinkStore } from './deep-link';
+import { EthereumQueries, EthereumAccountStore } from '@keplr-wallet/stores-eth';
+import { WebpageStore } from './webpage';
 
 export class RootStore {
   public readonly keyRingStore: KeyRingStore;
@@ -197,7 +198,10 @@ export class RootStore {
       }),
       CosmosGovernanceQueries.use(),
       CosmosGovernanceQueriesV1.use(),
-      EthereumQueries.use(),
+      EthereumQueries.use({
+        coingeckoAPIBaseURL: CoinGeckoAPIEndPoint,
+        coingeckoAPIURI: CoinGeckoCoinDataByTokenAddress,
+      }),
     );
 
     this.swapUsageQueries = new SwapUsageQueries(
@@ -208,7 +212,7 @@ export class RootStore {
       this.queriesStore.sharedContext,
       this.chainStore,
       this.swapUsageQueries,
-      SwapVenue,
+      [SwapVenue],
     );
 
     this.accountStore = new AccountStore(

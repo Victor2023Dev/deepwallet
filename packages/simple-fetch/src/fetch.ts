@@ -2,27 +2,32 @@ import { SimpleFetchRequestOptions, SimpleFetchResponse } from "./types";
 import { SimpleFetchError } from "./error";
 
 export function makeURL(baseURL: string, url: string): string {
-  const baseURLInstance = new URL(baseURL);
-  baseURL = removeLastSlashIfIs(baseURLInstance.origin);
-  url =
-    removeLastSlashIfIs(baseURLInstance.pathname) +
-    "/" +
-    removeFirstSlashIfIs(url);
+  try {
+    const baseURLInstance = new URL(baseURL);
+    baseURL = removeLastSlashIfIs(baseURLInstance.origin);
+    url =
+      removeLastSlashIfIs(baseURLInstance.pathname) +
+      "/" +
+      removeFirstSlashIfIs(url);
 
-  url =
-    url +
-    (() => {
-      if (Array.from(baseURLInstance.searchParams.keys()).length > 0) {
-        if (url.includes("?")) {
-          return "&" + baseURLInstance.searchParams.toString();
-        } else {
-          return "?" + baseURLInstance.searchParams.toString();
+    url =
+      url +
+      (() => {
+        if (Array.from(baseURLInstance.searchParams.keys()).length > 0) {
+          if (url.includes("?")) {
+            return "&" + baseURLInstance.searchParams.toString();
+          } else {
+            return "?" + baseURLInstance.searchParams.toString();
+          }
         }
-      }
-      return "";
-    })();
+        return "";
+      })();
 
-  return removeLastSlashIfIs(baseURL + "/" + removeFirstSlashIfIs(url));
+    return removeLastSlashIfIs(baseURL + "/" + removeFirstSlashIfIs(url));
+  } catch (err) {
+    console.error(err, `baseURL: ${baseURL}, url: ${url}`);
+    return baseURL || url;
+  }
 }
 
 function removeFirstSlashIfIs(str: string): string {

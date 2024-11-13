@@ -1,10 +1,10 @@
 import { InjectedKeplr } from "@keplr-wallet/provider";
-import { injectKeplrToWindow } from "@keplr-wallet/provider";
+import { injectDeepWalletToWindow } from "@keplr-wallet/provider";
 import { RpcProvider, WalletAccount } from "starknet";
 
 import manifest from "../../manifest.v2.json";
 
-const keplr = new InjectedKeplr(
+const deepwallet = new InjectedKeplr(
   manifest.version,
   "extension",
   (state) => {
@@ -13,37 +13,37 @@ const keplr = new InjectedKeplr(
     //      일단 webpack의 tree shaking 덕분에 아직은 어느정도 허용할만한 수준의 용량이다.
     //      이 코드에 의한 용량 문제에 대해서 고려해서 개발해야한다.
     if (state.rpc) {
-      if (!keplr.starknet.provider) {
-        keplr.starknet.provider = new RpcProvider({
+      if (!deepwallet.starknet.provider) {
+        deepwallet.starknet.provider = new RpcProvider({
           nodeUrl: state.rpc,
         });
       } else {
-        keplr.starknet.provider.channel.nodeUrl = state.rpc;
+        deepwallet.starknet.provider.channel.nodeUrl = state.rpc;
       }
     }
 
-    if (keplr.starknet.provider) {
+    if (deepwallet.starknet.provider) {
       if (state.selectedAddress) {
-        if (!keplr.starknet.account) {
-          keplr.starknet.account = new WalletAccount(
-            keplr.starknet.provider,
-            keplr.generateStarknetProvider()
+        if (!deepwallet.starknet.account) {
+          deepwallet.starknet.account = new WalletAccount(
+            deepwallet.starknet.provider,
+            deepwallet.generateStarknetProvider()
           );
-          keplr.starknet.account.address = state.selectedAddress;
+          deepwallet.starknet.account.address = state.selectedAddress;
         } else {
-          keplr.starknet.account.address = state.selectedAddress;
+          deepwallet.starknet.account.address = state.selectedAddress;
         }
       } else {
-        keplr.starknet.account = undefined;
+        deepwallet.starknet.account = undefined;
       }
     } else {
-      keplr.starknet.account = undefined;
+      deepwallet.starknet.account = undefined;
     }
   },
   (state) => {
     if (state.selectedAddress) {
-      if (keplr.starknet.account) {
-        keplr.starknet.account.address = state.selectedAddress;
+      if (deepwallet.starknet.account) {
+        deepwallet.starknet.account.address = state.selectedAddress;
       }
     }
   },
@@ -68,8 +68,8 @@ const keplr = new InjectedKeplr(
     icon: process.env.KEPLR_EXT_STARKNET_PROVIDER_INFO_ICON,
   }
 );
-injectKeplrToWindow(keplr);
+injectDeepWalletToWindow(deepwallet);
 
 window.addEventListener("beforeunload", () => {
-  keplr.__core__webpageClosed();
+  deepwallet.__core__webpageClosed();
 });

@@ -1,9 +1,9 @@
 import {RNInjectedKeplr} from './injected-provider';
-import {injectKeplrToWindow} from '@keplr-wallet/provider';
+import {injectDeepWalletToWindow} from '@keplr-wallet/provider';
 
 // TODO: Set the DeepWallet version properly
 const keplr = new RNInjectedKeplr('0.10.10', 'mobile-web');
-injectKeplrToWindow(keplr);
+injectDeepWalletToWindow(keplr);
 
 window.addEventListener(
   'message',

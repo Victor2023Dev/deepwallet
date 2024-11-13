@@ -1,5 +1,5 @@
 // Seperate shared config from UI config to prevent code mixup between UI and background process code.
-import {FiatCurrency} from '@keplr-wallet/types';
+import { FiatCurrency } from '@keplr-wallet/types';
 
 export const HelpDeskUrl = 'https://help.keplr.app';
 export const TermsOfUseUrl = 'https://terms-of-use.keplr.app';
@@ -9,6 +9,9 @@ export const CoinGeckoAPIEndPoint =
   'https://api.coingecko.com/api/v3';
 export const CoinGeckoGetPrice =
   process.env['KEPLR_EXT_COINGECKO_GETPRICE'] || '/simple/price';
+export const CoinGeckoCoinDataByTokenAddress =
+  process.env["KEPLR_EXT_COINGECKO_COIN_DATA_BY_TOKEN_ADDRESS"] ||
+  "/coins/{coingeckoChainId}/contract/{contractAddress}";
 export const AutoFetchingFiatValueInterval = 300 * 1000; // 5min
 
 export const AutoFetchingAssetsInterval = 15 * 1000; // 15sec
